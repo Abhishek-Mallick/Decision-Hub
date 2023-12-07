@@ -1,20 +1,27 @@
-import { Configuration, OpenAIApi } from "openai";
-import dotenv from "dotenv"
+// import { Configuration, OpenAIApi } from "openai";
+// certain changes made as per new update of open ai from v3 to v4
+
+import OpenAI from 'openai';
+
+
+import dotenv from "dotenv";
 dotenv.config();
 
-const openaikey = process.env.OPENAI_API_KEY;
+const openaiApiKey = process.env.OPENAI_API;
 
-if(!openaikey) {
-    console.log("No OpenAI API key found. Please add it to your .env file.")
-    process.exit(1);
+if (!openaiApiKey) {
+  console.error('OPENAI_API is not set.');
+  process.exit(1);
 }
 
-const configuration = new Configuration({
-    apiKey: openaikey
-})
-// openai is the new object which we will use late to send requests
-const openai = new OpenAIApi(configuration);
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API // This is also the default, can be omitted
+});
+// const configuration = new Configuration({
+//   apiKey: process.env.OPENAI_API,
+// });
+// const openai = new OpenAIApi(configuration);
 
-export default openai
+export default openai;
 
 // the query in the form will first get submitted in our own api then it'll go to the open ai api

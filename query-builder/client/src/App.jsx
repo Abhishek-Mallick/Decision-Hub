@@ -8,13 +8,23 @@ function App() {
 // use state to track the query descriptor
 const [userPrompt, setUserPrompt] = useState("");
 const [sqlQuery, setSqlQuery] = useState("");
+const [copySuccess, setCopySuccess] = useState(false);
 
   const onSubmit = async (e) => {
     e.preventDefault();
     console.log("form submitted: ", userPrompt);
     const query = await generateQuery();
     setSqlQuery(query);
+    setCopySuccess(false);
     console.log("query: ", query);
+  };
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(sqlQuery);
+    setCopySuccess(true);
+    setTimeout(() => {
+      setCopySuccess(false);
+    }, 2000);
   };
 
   // const generateQuery = async () => {
@@ -77,7 +87,13 @@ const [sqlQuery, setSqlQuery] = useState("");
               />
               <input type="submit" value="Generate Query" />
           </form>
+          {sqlQuery && (
+        <>
           <pre>{sqlQuery}</pre>
+          <button onClick={copyToClipboard}>Copy</button>
+          {copySuccess && <div className={styles.copySuccess}>Copied!</div>}
+        </>
+      )}
     </main>
 
   )

@@ -8,7 +8,7 @@ npm run dev
 Specify PORT config in `.env` file to run in server default set to `3005`
 Get one OpenAI API key from [here](https://platform.openai.com/api-keys)
 
-.`.env` contents ->
+`.env` contents ->
 ```
 OPENAI_API = sk-ABCD
 PORT = 5002

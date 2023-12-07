@@ -65,3 +65,12 @@
   margin-top: 40px;
   width: 69ch;
 }
+@media (prefers-color-scheme: dark) {
+  .main {
+    background-color: #1e1e1e; /* Set a background color for dark mode */
+  }
+
+  h1 {
+    color: #ffffff; /* Set text color for dark mode */
+  }
+}

@@ -5,7 +5,7 @@ import openAiClient from './api.js';
 const generate = async (queryDescription) => {
     const response = await openAiClient.completions.create({
         model: 'text-davinci-003',
-        prompt: `Convert the following natural language description into a SQL query: \n\n${queryDescription}`,
+        prompt: `Convert the following natural language description into a SQL query: \n\n${queryDescription}.`,
         temperature: 0.2,
         // Temperature defines the creativity index
         max_tokens: 100

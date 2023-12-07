@@ -6,12 +6,59 @@ import './App.css'
 
 function App() {
 // use state to track the query descriptor
-  const [queryDescriptor, setQueryDescriptor] = useState("")
+const [userPrompt, setUserPrompt] = useState("");
+const [sqlQuery, setSqlQuery] = useState("");
 
-  const onSubmit = (e) => {
-    e.preventDefault()
-    console.log("`action: onSubmit` - form submitted: ", queryDescriptor)
-  }
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    console.log("form submitted: ", userPrompt);
+    const query = await generateQuery();
+    setSqlQuery(query);
+    console.log("query: ", query);
+  };
+
+  // const generateQuery = async () => {
+  //   const response = await fetch("http://localhost:3005/generate", {
+  //     method: "POST",
+  //     headers: {
+  //       contentType: "application/json"
+  //     },
+  //     // converting query Javascript object to a JSON object
+  //     body: JSON.stringify({ queryDescription: queryDescription }),
+  //   });
+  //   const data = await response.json();
+  //   return data;
+  // };
+  const generateQuery = async () => {
+    try {
+      const response = await fetch("http://localhost:3005/generate", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ queryDescription: userPrompt }),
+      });
+  
+      if (!response.ok) {
+        console.error("Error in API response:", response.status, response.statusText);
+        return "Error in API response";
+      }
+  
+      const data = await response.json();
+  
+      if (!data || !data.response) {
+        console.error("Invalid data format:", data);
+        return "Invalid data format";
+      }
+  
+      // Assuming response is the correct property name
+      return data.response.trim();
+    } catch (error) {
+      console.error("Error in fetch:", error);
+      return "Error in fetch";
+    }
+  };
+  
 
   return (
     <main className={styles.main}>
@@ -26,10 +73,11 @@ function App() {
               type="text"
               name="query-descriptor"
               placeholder="Describe your query"
-              onChange={(e) => setQueryDescriptor(e.target.value)}
+              onChange={(e) => setUserPrompt(e.target.value)}
               />
               <input type="submit" value="Generate Query" />
           </form>
+          <pre>{sqlQuery}</pre>
     </main>
 
   )

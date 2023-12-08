@@ -41,7 +41,7 @@ const [copySuccess, setCopySuccess] = useState(false);
   // };
   const generateQuery = async () => {
     try {
-      const response = await fetch("http://localhost:3005/generate", {
+      const response = await fetch("http://localhost:5003/generate", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -1,3 +1,6 @@
+## Architectural Overview
+![Architectural Diagram](https://github.com/Abhishek-Mallick/Decision-Hub/assets/106394426/da6e2ff4-a483-4f7b-b241-69f4ede3d7ba)
+
 ## API Callback
 ![image](https://github.com/Abhishek-Mallick/Decision-Hub/assets/106394426/35c98b6f-8673-4878-a8fd-562b20300919)
 

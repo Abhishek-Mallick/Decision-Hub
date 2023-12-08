@@ -20,7 +20,7 @@ app.use(cors())({
 const port = process.env.PORT || 3005;
 
 app.get("/", (req, res) => {
-    res.send("Hello World - server API")
+    res.send("Server API configured properly")
 })
 
 app.post("/generate", async (req,res) => {

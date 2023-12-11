@@ -1,4 +1,9 @@
-![Logo](https://media.giphy.com/media/HUplkVCPY7jTW/giphy.gif)
+<h1 align="center">Decision-Hub</h1>
+<!-- <h5 align="center">""</h5> -->
+
+<hr>
+
+<img align="right" height="400px" padding="20px" src="https://media.giphy.com/media/HUplkVCPY7jTW/giphy.gif">
 
 # Problem Statement
 

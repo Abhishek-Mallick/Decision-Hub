@@ -1,3 +1,4 @@
+![Logo](https://media.giphy.com/media/HUplkVCPY7jTW/giphy.gif)
 
 # Problem Statement
 

@@ -3,15 +3,15 @@
 
 <hr>
 
-<img align="right" height="400px" padding="20px" src="https://media.giphy.com/media/HUplkVCPY7jTW/giphy.gif">
+<img align="right" height="300px" padding="20px" src="https://media.giphy.com/media/HUplkVCPY7jTW/giphy.gif">
 
 # Problem Statement
 
 Develop a Rule Builder application "DecisionHub" that empowers Business Analysts to create, save,and visualize decision strategies.
-Provide a no-code rule writing experience andvisual representation to test these rules in real-time and observe the calculations at each step.
+Provide a no-code rule writing experience andvisual representation to test <br> these rules in real-time and observe the calculations at each step.
 # Decision Hub 
 
-Decision Hub is an application tailored to streamline the challenges encountered by Business Analysts in creating, storing, and visualizing decision strategies. Fueled by advanced language models (LLM Powered Generative AI) and innovative methodologies, this tool offers a user-friendly,seamless, no-code rule-writing experience tailored for analysts who may not have programming expertise.
+Decision Hub is an application tailored to streamline the challenges encountered by Business Analysts in creating, storing, and visualizing decision strategies. Fueled by advanced language models (LLM Powered Generative AI) and innovative methodologies, this tool offers a user-friendly,seamless, no-code <br> rule-writing experience tailored for analysts who may not have programming expertise.
 
 Decision Hub is a comprehensive solution with distinct sections, each catering to specific needs: 
 
@@ -36,7 +36,8 @@ Pinpoint and rectify errors efficiently, ensuring the reliability and accuracy o
 
 ## Architectural Diagram
 
-![Logo](https://private-user-images.githubusercontent.com/106394426/289374834-948fcf3c-7b4a-4b8c-ae88-4a889380c29c.png?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTEiLCJleHAiOjE3MDIzMDQxODMsIm5iZiI6MTcwMjMwMzg4MywicGF0aCI6Ii8xMDYzOTQ0MjYvMjg5Mzc0ODM0LTk0OGZjZjNjLTdiNGEtNGI4Yy1hZTg4LTRhODg5MzgwYzI5Yy5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMxMjExJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMTIxMVQxNDExMjNaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT01MGUxYTQ3MGNlYWNiYjdiYjdjMzkxYTM3YjgxYmMwZTkzYmRiZDU5YzRmMzczY2U1MmZmOGJmZTA1YTFkZmM1JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.zRUFlzxmaDL3FXnxxK0VUUi3KKLOrxaGJZWblbnNum8)
+![archi](https://github.com/Abhishek-Mallick/Decision-Hub/assets/90705452/9ec2a192-a7c4-4305-899f-bc3e82ebaa26)
+
 
 
 ## Demo
@@ -69,7 +70,7 @@ serve -s dist
 
 ## Documentation
 
-[Documentation](https://linktodocumentation)
+[Documentation]()
 
 
 # Key-Features

@@ -11,7 +11,7 @@ Develop a Rule Builder application "DecisionHub" that empowers Business Analysts
 Provide a no-code rule writing experience andvisual representation to test <br> these rules in real-time and observe the calculations at each step.
 # Decision Hub 
 
-Decision Hub is an application tailored to streamline the challenges encountered by Business Analysts in creating, storing, and visualizing decision strategies. Fueled by advanced language models (LLM Powered Generative AI) and innovative methodologies, this tool offers a user-friendly,seamless, no-code <br> rule-writing experience tailored for analysts who may not have programming expertise.
+Decision Hub is an application tailored to streamline the challenges encountered by Business Analysts in creating, storing, and visualizing decision strategies. Fueled by advanced language models (LLM Powered Generative AI) and innovative <br> methodologies, this tool offers a user-friendly,seamless, no-code rule-writing experience tailored for analysts who may not have programming expertise.
 
 Decision Hub is a comprehensive solution with distinct sections, each catering to specific needs: 
 

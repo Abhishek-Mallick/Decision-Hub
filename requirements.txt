@@ -5,3 +5,4 @@ palm
 google-api-python-client
 google
 google-api-core
+google-generativeai

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charSet="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/favicon.ico" />
+    <title>DecisionHub</title>
+    <link rel="stylesheet" href="../static/css/b3766ade87b84a8c.css" type="text/css" />
+    <link rel="icon" href="../static/images/database-check-7195721-5847177.webp">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div id="__next">
+        <div
+            class="min-h-full text-gray-50 font-sans w-full antialiased tracking-wide flex flex-col items-center scroll-smooth ">
+            <section class="w-full min-h-screen h-full">
+                <header class="absolute top-0 right-0 pointer-events-none">
+                    <div 
+                        class="relative bg-white/10 hover:bg-white/5 backdrop-blur-sm p-2 mt-2 -mb-3 mr-2 rounded-full z-0 w-fit pointer-events-auto cursor-pointer">
+                        <a class="flex font-normal gap-x-3 sm:px-1 items-center" href="{{ url_for('login') }} ">
+                            <div class="hidden sm:block">Login</div><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"
+                                class="w-7 h-7">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                </header>
+                <section class="h-full min-h-screen w-full flex flex-col justify-around items-center py-5 px-5 gap-y-5 "
+                 style="background-image: url('https://images.unsplash.com/photo-1613946709284-0aa74f040a12?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"
+                    >
+                    <div>
+                        <h1 class="text-center text-xl sm:text-3xl font-extrabold"><span
+                                class="text-white">Decision</span><span class="text-white">Hub</span></h1>
+                                
+                        <h1
+                            class="text-center text-5xl sm:text-7xl md:text-7xl m-1 font-extrabold w-full max-w-3xl text-white">
+                            
+                            <span data-br=":R2cb6:" data-brr="1"
+                                style="display:inline-block;vertical-align:top;text-decoration:inherit;text-wrap:balance">Generate
+                                SQL with LLM in seconds!</span>
+                        </h1>
+                    </div>
+                    <div class="w-full max-w-lg flex flex-col justify-center items-center">
+                        <h2 as="h2" class="w-full my-5 text-xl sm:text-2xl text-gray-300 text-center" data-br=":R1kb6:"
+                            data-brr="1"
+                            style="display:inline-block;vertical-align:top;text-decoration:inherit;text-wrap:balance">
+                            Generate and explain optimized SQL queries using AI! Improve your skills and save time:</h2>
+                    
+                        <div
+                            class="relative w-full mx-auto bg-gradient-to-b from-gray-800 to-[#1b5888]/80 rounded-3xl p-[1px] font-mono">
+                            <div class="w-full h-fit rounded-t-3xl bg-black overflow-hidden"><textarea disabled=""
+                                    class="bg-gray-900 block border-none outline-none resize-none w-full p-3 text-xs sm:text-sm whitespace-pre-wrap"
+                                    rows="2" placeholder="Type Your English Text here"
+                                    aria-label="Type your English text here"
+                                    readonly="">find all users who live in California and have over 1000 credits</textarea>
+                            </div>
+                            <div class="absolute -translate-y-3 w-full flex items-center justify-center">
+                                <div class="bg-[#0e3049] w-fit p-0.5 rounded-full cursor-pointer"><svg
+                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                        aria-hidden="true" class="h-6 w-6 text-gray-300 animate-spin">
+                                        <path fill-rule="evenodd"
+                                            d="M15.312 11.424a5.5 5.5 0 01-9.201 2.466l-.312-.311h2.433a.75.75 0 000-1.5H3.989a.75.75 0 00-.75.75v4.242a.75.75 0 001.5 0v-2.43l.31.31a7 7 0 0011.712-3.138.75.75 0 00-1.449-.39zm1.23-3.723a.75.75 0 00.219-.53V2.929a.75.75 0 00-1.5 0V5.36l-.31-.31A7 7 0 003.239 8.188a.75.75 0 101.448.389A5.5 5.5 0 0113.89 6.11l.311.31h-2.432a.75.75 0 000 1.5h4.243a.75.75 0 00.53-.219z"
+                                            clip-rule="evenodd"></path>
+                                    </svg></div>
+                            </div>
+                            <div
+                                class="absolute bottom-3 right-5 w-fit text-black px-1.5 py-0.5 rounded-sm opacity-50 hover:opacity-100 font-sans text-xs bg-white font-semibold">
+                                No SQL knowledge required!</div>
+                            <div class="w-full rounded-b-3xl bg-black mt-[1px] overflow-hidden"><textarea disabled=""
+                                    class="bg-gray-900 block border-none outline-none resize-none w-full p-3 pt-4 text-xs sm:text-sm whitespace-pre-wrap"
+                                    rows="5" placeholder="Your AI-generated output"
+                                    aria-label="Your AI-generated output" readonly="">SELECT * FROM users
+WHERE state=&#x27;CA&#x27; AND credits &gt; 1000; ...</textarea></div>
+                        </div>
+                    </div>
+                    <div class="w-full max-w-lg my-10 relative z-10">
+                        <a
+                            class="text-center w-full block bg-gradient-to-r from-[#1b5888]/70 to-[#1b5888]/90 hover:bg-[#1b5888] hover:scale-105 shadow-cta-blue font-bold text-lg sm:text-3xl rounded-3xl p-4 sm:p-5 transition-all"
+                            href="{{ url_for('texttoquery') }} ">
+                            Generate SQL with AI now!
+                        </a>
+                        
+                    </div>
+
+                    <!-- <------------------------------------------------->
+
+                    <div class="w-full max-w-lg text-center">
+                        <h2 as="h2" class="w-full my-10 text-xl sm:text-2xl text-gray-200 text-center" data-br=":R2j6:" data-brr="1"
+                            style="display:inline-block;vertical-align:top;text-decoration:inherit;text-wrap:balance"><svg
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                                aria-hidden="true" class="w-7 h-7 inline mr-1 stroke-2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z">
+                                </path>
+                            </svg>Translate
+                            <span class="font-bold">Your Native Language</span>
+                            <!-- -->into Complex <span class="font-bold">SQL Queries</span> in seconds:
+                        </h2>
+                    
+                    </div>
+                    <div class="bg-transparent w-full max-w-lg h-fit mb-5">
+                        <div class="flex flex-col w-full max-w-lg">
+                            <div class="" id="headlessui-radiogroup-:Rcj6:" role="radiogroup" data-headlessui-state="value">
+                                <div class="flex gap-x-5 bg-gray-800 rounded-2xl p-1">
+                                    <div class="cursor-pointer focus:outline-none rounded-xl text-center flex-1 p-2 font-medium bg-gray-300 text-gray-900 hover:bg-gray-300"
+                                        id="headlessui-radiogroup-option-:Rdcj6:" role="radio" aria-checked="true" tabindex="0"
+                                        data-headlessui-state="checked"><span class="inline-flex items-center gap-x-2"
+                                            id="headlessui-label-:R1dcj6:"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                                fill="currentColor" aria-hidden="true" class="w-5 h-5">
+                                                <path fill-rule="evenodd"
+                                                    d="M15.312 11.424a5.5 5.5 0 01-9.201 2.466l-.312-.311h2.433a.75.75 0 000-1.5H3.989a.75.75 0 00-.75.75v4.242a.75.75 0 001.5 0v-2.43l.31.31a7 7 0 0011.712-3.138.75.75 0 00-1.449-.39zm1.23-3.723a.75.75 0 00.219-.53V2.929a.75.75 0 00-1.5 0V5.36l-.31-.31A7 7 0 003.239 8.188a.75.75 0 101.448.389A5.5 5.5 0 0113.89 6.11l.311.31h-2.432a.75.75 0 000 1.5h4.243a.75.75 0 00.53-.219z"
+                                                    clip-rule="evenodd"></path>
+                                            </svg>Generate</span></div>
+                                    <div class="cursor-pointer focus:outline-none rounded-xl text-center flex-1 p-2 font-medium  border-1 border-gray-600 ring-gray-700 bg-gray-900 text-gray-100"
+                                        id="headlessui-radiogroup-option-:Rlcj6:" role="radio" aria-checked="false" tabindex="-1"
+                                        data-headlessui-state=""><span class="inline-flex items-center gap-x-2"
+                                            id="headlessui-label-:R1lcj6:"><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"
+                                                class="w-5 h-5">
+                                                <path stroke-linecap="round" stroke-linejoin="round"
+                                                    d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18">
+                                                </path>
+                                            </svg>Explain</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-5" id="headlessui-radiogroup-:Rkj6:" role="radiogroup">
+                                <div class="flex gap-x-3 bg-gray-800 rounded-2xl p-1">
+                                    <div class="cursor-pointer focus:outline-none rounded-xl text-center flex-1 p-2 font-medium bg-[#cb6ce6] text-gray-900 hover:bg-[#cb6ce6]"
+                                        id="headlessui-radiogroup-option-:Rdkj6:" role="radio" aria-checked="true" tabindex="0"
+                                        data-headlessui-state="checked"><span id="headlessui-label-:R1dkj6:">SQL</span></div>
+                                    <div class="cursor-pointer focus:outline-none rounded-xl text-center flex-1 p-2 font-medium  border-1 border-gray-600 ring-gray-700 bg-gray-900 text-gray-100"
+                                        id="headlessui-radiogroup-option-:Rlkj6:" role="radio" aria-checked="false" tabindex="-1"
+                                        data-headlessui-state=""><span id="headlessui-label-:R1lkj6:"><span
+                                                class="hidden sm:inline">Excel</span> Formula</span>
+                                    </div>
+                                    <div class="cursor-pointer focus:outline-none rounded-xl text-center flex-1 p-2 font-medium  border-1 border-gray-600 ring-gray-700 bg-gray-900 text-gray-100"
+                                        id="headlessui-radiogroup-option-:Rtkj6:" role="radio" aria-checked="false" tabindex="-1"
+                                        data-headlessui-state=""><span id="headlessui-label-:R1tkj6:">Regex</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full max-w-lg">
+                        <div class="relative w-full mx-auto bg-gradient-to-br from-gray-800 to-[#cb6ce6]/80 rounded-3xl p-[1px] font-mono">
+                            <div class="w-full h-fit rounded-t-3xl bg-black overflow-hidden"><textarea disabled=""
+                                    class="bg-gray-900 block border-none outline-none resize-none w-full p-3 pb-8 text-xs sm:text-sm whitespace-pre-wrap"
+                                    rows="5" placeholder="Type Your English Text here" aria-label="Type your English text here"
+                                    readonly="">find all users who live in California and have over 1000 credits</textarea>
+                            </div>
+                            <div class="absolute -translate-y-5 w-full flex items-center justify-center">
+                                <div
+                                    class="relative bg-[#cb6ce6] w-fit py-2 px-3 rounded-full cursor-pointer inline-flex gap-x-2 font-sans font-semibold active:ring-2 ring-[#cb6ce6] ring-offset-2 ring-offset-black">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"
+                                        class="h-6 w-6">
+                                        <path fill-rule="evenodd"
+                                            d="M15.312 11.424a5.5 5.5 0 01-9.201 2.466l-.312-.311h2.433a.75.75 0 000-1.5H3.989a.75.75 0 00-.75.75v4.242a.75.75 0 001.5 0v-2.43l.31.31a7 7 0 0011.712-3.138.75.75 0 00-1.449-.39zm1.23-3.723a.75.75 0 00.219-.53V2.929a.75.75 0 00-1.5 0V5.36l-.31-.31A7 7 0 003.239 8.188a.75.75 0 101.448.389A5.5 5.5 0 0113.89 6.11l.311.31h-2.432a.75.75 0 000 1.5h4.243a.75.75 0 00.53-.219z"
+                                            clip-rule="evenodd"></path>
+                                    </svg>Generate
+                                    Random Example<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                        stroke="currentColor" aria-hidden="true" class="h-8 w-8 absolute -bottom-2 -right-4 animate-bounce">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59">
+                                        </path>
+                                    </svg>
+                                    <div class="text-xs text-gray-500 hidden sm:block absolute bottom-0 -right-[9em] animate-pulse">
+                                        Click for demo!</div>
+                                </div>
+                            </div>
+                            <div class="w-full rounded-b-3xl bg-black mt-[1px] overflow-hidden"><textarea disabled=""
+                                    class="bg-gray-900 block border-none outline-none resize-none w-full p-3 pt-8 text-xs sm:text-sm whitespace-pre-wrap"
+                                    rows="10" placeholder="Your AI-generated output" aria-label="Your AI-generated output" readonly="">SELECT * FROM users
+                    WHERE state=&#x27;CA&#x27; AND credits &gt; 1000;</textarea></div>
+                        </div>
+                    </div>
+
+                    
+
+                    <!-- --------------------------------------------------------------------- -->
+                    
+
+                    <h2 as="h2" class="w-full my-10 text-xl sm:text-2xl text-gray-200 text-center" data-br=":R2r6:" data-brr="1"
+                        style="display:inline-block;vertical-align:top;text-decoration:inherit;text-wrap:balance"><svg
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                            aria-hidden="true" class="w-7 h-7 inline mr-1 mb-1 stroke-2">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125">
+                            </path>
+                        </svg> Use Your own database tables:</h2>
+                    
+                    <div class="w-full max-w-lg">
+                        <div class="relative w-full mx-auto bg-gradient-to-tl from-gray-800 to-[#cb6ce6]/80 rounded-3xl p-[1px] font-mono">
+                            <div class="w-full h-fit rounded-3xl bg-black overflow-hidden"><textarea disabled=""
+                                    class="bg-gray-900 block border-none outline-none resize-none w-full p-3 pb-8 text-xs sm:text-sm whitespace-pre-wrap"
+                                    rows="5" placeholder="Type Your English Text here" aria-label="Type your English text here" readonly="">Employee (id, name, department_id);
+                    Department (id, name, address);
+                    Salary_Payments (id, employee_id, amount, date);</textarea></div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap justify-center items-stretch content-evenly gap-x-5 gap-y-3 text-xs text-gray-300 mt-8">
+                    
+                        <div class="text-center flex flex-col items-center justify-between"><img alt="Postgres"
+                                src="../static/images/postgresql.png" width="50" height="50" decoding="async" data-nimg="1"
+                                class="p-2 w-14 h-14 bg-gray-100/5 rounded-2xl grayscale hover:grayscale-0" loading="lazy"
+                                style="color:transparent" />
+                            <div class="pt-1">PostgreSQL</div>
+                        </div>
+                    
+                        <div class="text-center flex flex-col items-center justify-between"><img alt="BigQuery"
+                                src="../static/images/bigquery.png" width="50" height="50" decoding="async" data-nimg="1"
+                                class="p-2 w-14 h-14 bg-gray-100/5 rounded-2xl grayscale hover:grayscale-0" loading="lazy"
+                                style="color:transparent" />
+                            <div class="pt-1">BigQuery</div>
+                        </div>
+                    
+                        <div class="text-center flex flex-col items-center justify-between"><img alt="MS SQL Server"
+                                src="../static/images/mysql.png" width="50" height="50" decoding="async" data-nimg="1"
+                                class="p-2 w-14 h-14 bg-gray-100/5 rounded-2xl grayscale hover:grayscale-0" loading="lazy"
+                                style="color:transparent" />
+                            <div class="pt-1">MS SQL</div>
+                        </div>
+                        <div class="text-center flex flex-col items-center justify-between"><img alt="SQLite"
+                                src="../static/images/Sqlite.png" width="50" height="50" decoding="async" data-nimg="1"
+                                class="p-2 w-14 h-14 bg-gray-100/5 rounded-2xl grayscale hover:grayscale-0" loading="lazy"
+                                style="color:transparent" />
+                            <div class="pt-1">SQLite</div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+            
+            
+            <section class="w-full max-w-2xl p-5 flex flex-col items-center">
+                <h2 as="h2" class="w-full my-8 text-xl sm:text-2xl text-gray-200 text-center" data-br=":R3r6:"
+                    data-brr="1"
+                    style="display:inline-block;vertical-align:top;text-decoration:inherit;text-wrap:balance"><svg
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" aria-hidden="true" class="w-7 h-7 inline mr-1 mb-1 stroke-2">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z">
+                        </path>
+                    </svg>
+                    <!-- -->FAQ</h2>
+               
+                <div class="text-gray-300 w-full max-w-lg text-sm text-justify">
+                    <div class="my-3">
+                        <div class="font-bold text-md text-white">What features are available?</div>
+                        <div>
+                            <!-- -->The app currently supports the following services:
+                            <ul class="list-outside pl-5">
+                                <li class="list-disc">Microsoft Excel and Google Sheets formula (function) generation
+                                    and explanation (text2formula &amp; formula2text).</li>
+                                <li class="list-disc">Regex expression generation and explanation with AI (text2regex
+                                    &amp; regex2text).</li>
+                                <li class="list-disc">SQL query building from textual instructions in any language
+                                    (text2sql). Supports SELECT, UPDATE, DELETE queries, CREATE and ALTER TABLE
+                                    requests, constraints, window functions, and literally everything!</li>
+                                <li class="list-disc">SQL query explanation to plain English (sql2text).</li>
+                                <li class="list-disc">SQL query optimization for better performance.</li>
+                                <li class="list-disc">SQL query error fixation for faster problem-solving.</li>
+                                <li class="list-disc">Adding your custom database schema (tables, fields, types).</li>
+                                <li class="list-disc">SQL dialects for MySQL, PostgreSQL, Snowflake, BigQuery, MS SQL
+                                    Server, and for more database types!</li>
+                                <li class="list-disc">Supports all languages (English, Spanish, French, German,
+                                    Portuguese, Italian, Russian, Chinese, Japanese, Korean, Arabic, Hindi, and more!)
+                                </li>
+                            </ul>If you have any other feature request that can be solved using Artificial Intelligence,
+                            please let us know!
+                        </div>
+                    </div>
+                    <div class="my-3">
+                        <div class="font-bold text-md text-white">Is the generation of responses always correct?</div>
+                        <div>Despite using the currently state-of-the-art Natural Language Processing tool available,
+                            its results can sometimes be inaccurate.
+                            <!-- --><span class="bg-gray-800 px-1 py-0.5 rounded-md">Always check the output before
+                                using it in production</span>, and see hints for better performance (e.g. use more
+                            detailed sentences or incorporate your database scheme).
+                        </div>
+                    </div>
+                    <div class="my-3">
+                        <div class="font-bold text-md text-white">What are the potential use cases?</div>
+                        <div>This application serves as an excellent resource for beginners eager to learn SQL query
+                            writing. Moreover, it provides immense value to experts and professionals such as
+                            <!-- --><span class="bg-gray-800 px-1 py-0.5 rounded-md">data analysts, data scientists,
+                                data engineers, and software developers</span>
+                            <!-- -->who aim to improve their skills or streamline their workflow.<span
+                                class="bg-gray-800 px-1 py-0.5 rounded-md">No prior knowledge required!</span>
+                        </div>
+                    </div>
+                    <div class="my-3">
+                        <div class="font-bold text-md text-white">Is my data safe?</div>
+                        <div><span class="bg-gray-800 px-1 py-0.5 rounded-md">Your data security is our priority.</span>
+                            <!-- -->We do not store any user input or generated output. All data processing happens in
+                            real-time and is discarded immediately after use. Our system utilizes OpenAI for processing,
+                            which follows strict data usage policies. You can review
+                            <!-- --><a class="underline" href="https://openai.com/policies" target="_blank"
+                                rel="noreferrer">OpenAI&#x27;s data policy</a>
+                            <!-- -->for further information.
+                        </div>
+                    </div>
+                    <div class="my-3">
+                        <div class="font-bold text-md text-white">Why is it better than other SQL AI tools?</div>
+                        <div>Our service distinguishes itself from similar tools such as ai2sql, formulabot, or
+                            aihelperbot by offering comparable accuracy and performance at a more affordable rate. This
+                            is possible because all SQL, Formula, and Regex generators fundamentally
+                            utilize the same AI language model in the background.
+                            <!-- --><span class="bg-gray-800 px-1 py-0.5 rounded-md">We are happy to say that
+                                Text2SQL.AI is the most popular AI SQL generator in the world!</span>
+                            <div class="h-2"></div>Furthermore, it is the only AI tool capable of generating SQL, Regex,
+                            Excel, and Google Sheets formulas in one!
+                        </div>
+                    </div>
+                    <div class="my-3">
+                        <div class="font-bold text-md text-white">How does it work?</div>
+                        <div>Text2SQL.AI uses the OpenAI GPT Codex model which can translate English prompts to SQL
+                            queries, and SQL queries to English text. It is currently the most advanced Natural Language
+                            Processing tool available, and this is the exact same model
+                            which used by Github Copilot.</div>
+                    </div>
+                    <div class="my-3">
+                        <div class="font-bold text-md text-white">Is it free to use?</div>
+                        <div>When the OpenAI GPT Codex model was in BETA and its API was free to use, Text2SQL.AI was
+                            completely free to use. However, now we are offering paid plans with 7 days free trial for
+                            better user experience, and you can cancel anytime!
+                            <span class="bg-gray-800 px-1 py-0.5 rounded-md">Try for free!</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <footer class="w-full p-3">
+                <div class="text-xs text-white" style=" text-align: center;">DicisionHub @ 2023
+                </div>
+            
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charSet="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/favicon.ico" />
+    <title>DecisionHub</title>
+    <link rel="stylesheet" href="../static/css/b3766ade87b84a8c.css" type="text/css" />
+    <link rel="icon" href="../static/images/database-check-7195721-5847177.webp">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body>
+    <div id="__next">
+        <div class="h-screen w-full"  >
+            
+            
+            <div class="h-screen min-h-screen w-full flex-col items-center ml-1/2"
+                style="background-image: url('https://images.unsplash.com/photo-1613946709284-0aa74f040a12?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+
+                <main class="w-full p-2 p-5">
+                    <div>
+                        <h1 class="text-center text-xl sm:text-3xl font-extrabold"><span class="text-white">Decision</span><span
+                                class="text-white">Hub</span></h1>
+                    
+                    
+                    </div>
+                    <header class="absolute top-0 right-0 pointer-events-none">
+                        <div
+                            class="relative bg-white/10 hover:bg-white/5 backdrop-blur-sm p-2 mt-2 -mb-3 mr-2 rounded-full z-0 w-fit pointer-events-auto cursor-pointer">
+                            <a class="flex font-normal gap-x-3 sm:px-1 items-center" href="">
+                                <div class="hidden sm:block">{{username}}</div><svg xmlns="http://www.w3.org/2000/svg" fill="none"
+                                    viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="w-7 h-7">
+                                    <path stroke-linecap="round" stroke-linejoin="round"
+                                        d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z">
+                                    </path>
+                                </svg>
+                            </a>
+                        </div>
+                    </header>
+                    <div
+                        class="w-full h-fit max-w-2xl mx-auto bg-gradient-to-br from-gray-800 to-[#cb6ce6]/80 rounded-3xl p-[1px] mt-10">
+                        <div class="w-full p-1 rounded-t-3xl bg-black">
+                            <div class="p-4 flex flex-col">
+                                <div
+                                    class="flex flex-col md:flex-row justify-between w-full items-center gap-x-2 gap-y-3">
+                                    <div class="text-2xl font-bold text-gray-100">Generate Query</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-full p-1 bg-black mt-[1px]">
+                            <div class="p-4 flex flex-col">
+                                <div class="flex items-center gap-x-2">
+                                    <div class=""><button
+                                            class="bg-gray-800 relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-[#cb6ce6] focus:ring-offset-2 ring-offset-black"
+                                            id="headlessui-switch-:Rcjj6:" role="switch" type="button" tabindex="0"
+                                            aria-checked="false" data-headlessui-state=""><span class="sr-only">Use
+                                                setting</span><span aria-hidden="true"
+                                                class="translate-x-0 pointer-events-none inline-block h-5 w-5 transform rounded-full bg-gray-100 shadow ring-0 transition duration-200 ease-in-out"></span></button>
+                                    </div>
+                                    <div class="text-gray-500 inline-flex items-center gap-x-0 text-center"><svg
+                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" aria-hidden="true"
+                                            class="h-5 w-8 inline-block mr-1">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125">
+                                            </path>
+                                        </svg>Add
+                                        database schema</div>
+                                </div>
+                            </div>
+                        </div>
+                        <form method="post" action="{{ url_for('texttoquery') }}">
+                        <div class="w-full p-1 bg-black mt-[1px]">
+                            <div class="h-full p-4 flex flex-col"><label for="prompt"
+                                    class="text-sm font-medium text-gray-500 flex justify-between w-full"><span>Write
+                                        the plain English Text here:</span></label>
+                                <div class="mt-1 flex-grow w-full"><textarea rows="5"
+                                        class="block font-mono w-full h-full resize-none rounded-xl bg-gray-900 text-white border-gray-700 shadow-sm focus:border-[#38bdf8] focus:ring-[#38bdf8] text-sm sm:text-base"
+                                        placeholder=" find all users who live in California and have over 1000 credits"  id="user_text" name="user_text" required></textarea>
+                                </div>
+                                <div
+                                    class="flex flex-col md:flex-row items-center md:items-start gap-x-3 gap-y-3 relative w-full mt-3">
+                                    <button style="background-color: #38bdf8" type="submit" class="w-full inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-[#cb6ce6] to-[#cb6ce6]/60 
+          px-2 py-2 text-lg font-medium text-white hover:to-[#38bdf8]/90 
+          focus:outline-none focus:ring-2 focus:ring-[#38bdf8] focus:ring-offset-2 ring-offset-black"><svg
+                                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                            aria-hidden="true" class="-ml-1 mr-2 h-6 w-6 text-gray-100">
+                                            <path fill-rule="evenodd"
+                                                d="M15.312 11.424a5.5 5.5 0 01-9.201 2.466l-.312-.311h2.433a.75.75 0 000-1.5H3.989a.75.75 0 00-.75.75v4.242a.75.75 0 001.5 0v-2.43l.31.31a7 7 0 0011.712-3.138.75.75 0 00-1.449-.39zm1.23-3.723a.75.75 0 00.219-.53V2.929a.75.75 0 00-1.5 0V5.36l-.31-.31A7 7 0 003.239 8.188a.75.75 0 101.448.389A5.5 5.5 0 0113.89 6.11l.311.31h-2.432a.75.75 0 000 1.5h4.243a.75.75 0 00.53-.219z"
+                                                clip-rule="evenodd"></path>
+                                        </svg><span>Generate Query</span></button>
+                                    <div class="flex-grow-0 self-stretch flex items-end gap-x-4"><select
+                                            class="h-full text-left w-40 rounded-xl border border-gray-700 bg-gray-900 py-1.5 pl-3 pr-5 text-sm shadow-sm focus:border-[#38bdf8] focus:outline-none focus:ring-1 focus:ring-[#38bdf8] sm:text-sm text-gray-100">
+                                            <option>Database Type</option>
+                                            <option value="PostgreSQL">PostgreSQL</option>
+                                            <option value="MySQL">MySQL</option>
+                                            <option value="MS SQL Server">MS SQL Server</option>
+                                            <option value="MariaDB">MariaDB</option>
+                                            <option value="Snowflake">Snowflake</option>
+                                            <option value="BigQuery">BigQuery</option>
+                                            <option value="SQLite">SQLite</option>
+                                            <option value="IBM DB2">IBM DB2</option>
+                                            <option value="Hive">Hive</option>
+                                            <option value="FlinkSQL">FlinkSQL</option>
+                                        </select></div>
+                                </div>
+                            </div>
+                        </div>
+                        </form>
+                        <div class="w-full p-1 rounded-b-3xl bg-black mt-[1px]">
+                            <div class="h-full p-4 flex flex-col">
+                                <div class="mt-1 flex-grow relative w-full"><textarea rows="8" name="output" id="output"
+                                        class="block font-mono w-full h-full resize-none rounded-xl bg-gray-900 text-white border-gray-700 shadow-sm
+                     focus:border-[#38bdf8] focus:ring-[#38bdf8] text-sm sm:text-base"
+                                        placeholder="SELECT * FROM users WHERE state=&#x27;CA&#x27; AND credits &gt; 1000;"> {{ solution }}</textarea>
+                                </div>
+                                <div class="w-full text-center mt-3 flex justify-between items-center"><button
+                                        type="button"
+                                        class="w-full md:w-fit inline-flex items-center justify-center rounded-xl border border-transparent bg-gray-200 px-4 py-1.5 text-sm font-medium text-gray-900 hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-200 focus:ring-offset-2 ring-offset-black"><svg
+                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                            stroke-width="1.5" stroke="currentColor" aria-hidden="true"
+                                            class="w-5 h-5 -ml-1 mr-2">
+                                            <path stroke-linecap="round" stroke-linejoin="round"
+                                                d="M8.25 7.5V6.108c0-1.135.845-2.098 1.976-2.192.373-.03.748-.057 1.123-.08M15.75 18H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08M15.75 18.75v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5A3.375 3.375 0 006.375 7.5H5.25m11.9-3.664A2.251 2.251 0 0015 2.25h-1.5a2.251 2.251 0 00-2.15 1.586m5.8 0c.065.21.1.433.1.664v.75h-6V4.5c0-.231.035-.454.1-.664M6.75 7.5H4.875c-.621 0-1.125.504-1.125 1.125v12c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V16.5a9 9 0 00-9-9z">
+                                            </path>
+                                        </svg>Copy</button>
+                                    <div
+                                        class="w-fit ml-4 inline-flex items-center border border-gray-700 rounded-xl bg-gray-900 text-sm font-medium
+                 text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-[#cb6ce6] focus:ring-offset-2 ring-offset-black">
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <footer class="w-full p-3">
+                    <div class="text-xs text-white" style=" text-align: center;">DicisionHub @ 2023 | <a href="{{ url_for('logout') }}">Logout</a>
+                    </div>
+                
+                </footer>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

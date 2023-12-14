@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charSet="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/favicon.ico" />
+    <title>DecisionHub</title>
+    <link rel="stylesheet" href="../static/css/b3766ade87b84a8c.css" type="text/css" />
+    <link rel="icon" href="../static/images/database-check-7195721-5847177.webp">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+
+    <div
+        class="w-full h-screen bg-[url(https://images.unsplash.com/photo-1613946709284-0aa74f040a12?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-zinc-300 flex items-center justify-center">
+        <div class="w-[25vw] bg-white px-20  py-10 rounded-[30px]">
+            <h1 class="text-3xl text-center tracking-tighter leading-none capitalize font-semibold text-zinc-700">
+                Create new account</h1>
+            <form method="POST" action="{{ url_for('register') }}">
+                <input class="border-2 rounded-md block w-full mt-4 px-3 py-2 " type="text" id="username" name="username" required
+                    placeholder="username">
+                <input class="border-2 rounded-md block w-full mt-2 px-3 py-2 " type="email" name="email"
+                    placeholder="email">
+                <input class="border-2 rounded-md block w-full mt-2 px-3 py-2 " type="number" name="contact"
+                    placeholder="contact">
+                <input class="border-2 rounded-md block w-full mt-2 px-3 py-2" type="password" id="password" name="password" required
+                    placeholder="password">
+    
+                <input class="border-2 block w-full mt-2 px-3 py-2 bg-blue-600 text-white rounded-full" type="submit"
+                    value="Create New Account">
+                <p class="font-semibold text-zinc-700 mt-10 text-center text-xs">By continuing, you agree to DicisionHub's
+                    Terms of Service; Opens a new tab and acknowledge you've read our Privacy
+                    Policy. Notice at collection.
+                </p>
+            </form>
+            <a class="inline-block mt-7 text-sm font-semibold text-zinc-700 text-center w-full" href="{{ url_for('login') }} ">Login Existing
+                Account</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

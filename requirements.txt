@@ -1,4 +1,4 @@
-Flask==2.0.1
-Flask-SQLAlchemy==3.0
-google==3.0.0
-palm==1.2.3
+Flask
+Flask-SQLAlchemy
+google
+palm

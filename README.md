@@ -41,6 +41,9 @@ Pinpoint and rectify errors efficiently, ensuring the reliability and accuracy o
 ## Wireframe
 ![archi](https://github.com/Abhishek-Mallick/Decision-Hub/assets/90705452/9ec2a192-a7c4-4305-899f-bc3e82ebaa26)
 
+## Demo
+[Query Builder](https://decisionhub.pythonanywhere.com/)
+[Decision-Updater](https://decision-hub.vercel.app/)
 
 ## Deployment
 

@@ -46,6 +46,8 @@ Pinpoint and rectify errors efficiently, ensuring the reliability and accuracy o
 <br>
 [Decision-Updater](https://decision-hub.vercel.app/)
 
+https://github.com/Abhishek-Mallick/Decision-Hub/assets/106394426/be16128c-2f95-405f-b5f6-005eb5e9666a
+
 ## Deployment
 
 To deploy this project run

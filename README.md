@@ -1,5 +1,5 @@
 <h1 align="center">Decision-Hub</h1>
-<!-- <h5 align="center">""</h5> -->
+<h5 align="center">"Empowering Analyts with AI-Driven Decision Automation"</h5>
 
 <hr>
 

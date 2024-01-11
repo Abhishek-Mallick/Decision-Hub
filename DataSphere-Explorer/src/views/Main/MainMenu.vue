@@ -1,9 +1,6 @@
 <template>
   <nav>
     <div id="nav-links">
-      <a href="https://sqliteviz.com">
-        <img :src="require('@/assets/images/logo_simple.svg')">
-      </a>
       <router-link to="/workspace">Workspace</router-link>
       <router-link to="/inquiries">Inquiries</router-link>
       <a href="https://sqliteviz.com/docs" target="_blank">Help</a>

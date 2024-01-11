@@ -1,7 +1,7 @@
 {
-  "name": "@react-awesome-query-builder/sandbox-simple",
+  "name": "Advanced Logic Builder",
   "version": "6.4.2",
-  "description": "Simple demo for @react-awesome-query-builder",
+  "description": "Advanced logic builder for rule logic's",
   "repository": {
     "type": "git",
     "url": "https://github.com/Abhishek-Mallick/Decision-Hub.git",

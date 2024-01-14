@@ -610,7 +610,7 @@ img[data-v-0dd86013] {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
+  height: 80%;
   cursor: pointer;
 }
 #img-container[data-v-8f626c6c] {
@@ -621,6 +621,8 @@ img[data-v-0dd86013] {
   width: 450px;
   height: 338px;
   pointer-events: none;
+  /* display: none; */
+  scale: 0.0004;
 }
 #drop-file-top-img[data-v-8f626c6c] {
   width: 450px;
@@ -1355,7 +1357,7 @@ button.toolbar[data-v-0e0b18b7] {
 }
 [data-v-0da5ae79] .drop-area {
   width: 706px;
-  height: 482px;
+  height: 202px;
   padding: 0 150px;
   position: relative;
 }
@@ -1478,8 +1480,8 @@ button[data-v-7599f804] {
   --color-gray-light-4: #ebf0f8;
   --color-gray-light-5: #f8f8f9;
   --color-gray-medium: #a2b1c6;
-  --color-gray-dark: #ff0000;
-  --color-blue-medium: #ff9d3b;
+  --color-gray-dark: #00684a;
+  --color-blue-medium: #00684a;
   --color-blue-dark: #ff1410;
   --color-blue-dark-2: #2a3f5f;
   --color-red: #ef553b;

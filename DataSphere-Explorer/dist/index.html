@@ -8,6 +8,13 @@
     <link rel="manifest" href="manifest.webmanifest">
     <title>a</title>
     <style>
+      a.router-link-active[data-v-7599f804] {
+        display: none;
+      color: var(--color-accent);
+    }
+    #hide_help{
+      display: none;
+    }
       #sqliteviz-loading-wrapper {
         position: fixed;
         width: 100%;
@@ -74,7 +81,7 @@
   <link href="js/chunk-2d22998c.fc808a1d.js" rel="prefetch"><link href="css/app.7af95339.css" rel="preload" as="style"><link href="css/chunk-vendors.b122e99d.css" rel="preload" as="style"><link href="js/app.16ac281e.js" rel="preload" as="script"><link href="js/chunk-vendors.8b7c3b89.js" rel="preload" as="script"><link href="css/chunk-vendors.b122e99d.css" rel="stylesheet"><link href="css/app.7af95339.css" rel="stylesheet"></head>
   <body>
     <noscript>
-      <strong>We're sorry but sqliteviz doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+      <strong>We're sorry but DecisionHub doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div id="app">
       <div id="sqliteviz-loading-wrapper">
@@ -95,8 +102,15 @@
         </svg>
       </div>
     </div>
-    <!-- extention slot start -->
-    <!-- extention slot end -->
-    <!-- built files will be auto injected -->
-  <script type="text/javascript" src="js/chunk-vendors.8b7c3b89.js"></script><script type="text/javascript" src="js/app.16ac281e.js"></script></body>
+  <script type="text/javascript" src="js/chunk-vendors.8b7c3b89.js"></script><script type="text/javascript" src="js/app.16ac281e.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var navbar = document.querySelector('nav[data-v-7599f804]');
+      if (navbar) {
+        navbar.parentNode.removeChild(navbar);
+      }
+    });
+  </script>
+
+</body>
 </html>

@@ -296,6 +296,7 @@ input.error[data-v-59fd41a8] {
 .disabled.chevron-icon:hover path[data-v-07476bf6] {
   fill: #c8d4e3;
 }
+
 .clear-icon[data-v-208c41ca] {
   cursor: pointer;
 }
@@ -1342,6 +1343,7 @@ button.toolbar[data-v-0e0b18b7] {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  color: #00684a;
 }
 #note[data-v-0da5ae79] {
   margin-top: 27px;
@@ -1399,12 +1401,13 @@ nav[data-v-7599f804] {
   border-bottom: 1px solid var(--color-border-light);
   box-shadow: var(--shadow-1);
   box-sizing: border-box;
-  position: fixed;
-  top: 0;
+  /* position: fixed;
+  top: 0; */
   left: 0;
   width: 100vw;
   padding: 0 16px 0 52px;
   z-index: 999;
+  display: none;
 }
 a[data-v-7599f804] {
   font-size: 18px;
@@ -1416,6 +1419,10 @@ a[data-v-7599f804] {
 a.router-link-active[data-v-7599f804] {
     display: none;
   color: var(--color-accent);
+}
+
+#hide_help{
+  display: none;
 }
 button[data-v-7599f804] {
   margin-left: 16px;
@@ -1451,7 +1458,7 @@ button[data-v-7599f804] {
   border-radius: 10px;
 }
 #main-view[data-v-25aa04f9] {
-  margin-top: 68px;
+  margin-top: 10px;
   height: calc(100vh - 68px);
   overflow-y: auto;
 }

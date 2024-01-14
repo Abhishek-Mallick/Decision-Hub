@@ -3,7 +3,7 @@
     <div id="nav-links">
       <router-link to="/workspace">Workspace</router-link>
       <router-link to="/inquiries">Inquiries</router-link>
-      <a href="https://sqliteviz.com/docs" target="_blank">Help</a>
+      <a href="https://sqliteviz.com/docs" target="_blank" id="hide_help">Help</a>
     </div>
     <div id="nav-buttons">
       <button

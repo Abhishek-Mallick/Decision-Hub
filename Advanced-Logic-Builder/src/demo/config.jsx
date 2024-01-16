@@ -4,8 +4,6 @@ import { BasicConfig } from "@react-awesome-query-builder/ui";
 const InitialConfig = BasicConfig;
 
 
-//////////////////////////////////////////////////////////////////////
-
 const fields = {
   user: {
     label: "User",
@@ -48,14 +46,14 @@ const fields = {
       max: 5
     },
   },
-  slider: {
-    label: "Slider",
+  acc_balance: {
+    label: "Account Balance",
     type: "number",
     preferWidgets: ["slider", "rangeslider"],
     valueSources: ["value", "field"],
     fieldSettings: {
       min: 0,
-      max: 100,
+      max: 10000,
       step: 1,
       marks: {
         0: <strong>0%</strong>,
@@ -64,9 +62,9 @@ const fields = {
     },
     //overrides
     widgets: {
-      slider: {
+      acc_balance: {
         widgetProps: {
-          valuePlaceholder: "..Slider",
+          valuePlaceholder: "..acc_balance",
         }
       }
     },
@@ -164,14 +162,14 @@ delete operators.proximity;
 const widgets = {
   ...InitialConfig.widgets,
   // examples of  overriding
-  slider: {
-    ...InitialConfig.widgets.slider,
+  acc_balance: {
+    ...InitialConfig.widgets.acc_balance,
     customProps: {
       width: "300px"
     }
   },
-  rangeslider: {
-    ...InitialConfig.widgets.rangeslider,
+  rangeacc_balance: {
+    ...InitialConfig.widgets.rangeacc_balance,
     customProps: {
       width: "300px"
     }

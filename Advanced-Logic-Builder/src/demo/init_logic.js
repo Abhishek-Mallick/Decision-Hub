@@ -6,23 +6,23 @@ const value
         {
           "var": "user.login"
         },
-        "batman"
+        "Abhishek"
       ]
     },
     {
       "==": [
         {
-          "var": "stock"
+          "var": "datetime"
         },
         false
       ]
     },
     {
-      "==": [
+      ">=": [
         {
-          "var": "slider"
+          "var": "Account Balance"
         },
-        35
+        1000
       ]
     }
   ]

@@ -9,7 +9,7 @@ const value
         "field": "user.login",
         "operator": "equal",
         "value": [
-          "batman"
+          "Abhishek"
         ],
         "valueSrc": [
           "value"
@@ -22,26 +22,26 @@ const value
     "98a8a9ba-0123-4456-b89a-b16e721c8cd0": {
       "type": "rule",
       "properties": {
-        "field": "stock",
+        "field": "datetime",
         "operator": "equal",
         "value": [
-          false
+          "2024-01-17T14:30:00" // Example datetime value
         ],
         "valueSrc": [
           "value"
         ],
         "valueType": [
-          "boolean"
+          "datetime"
         ]
       }
-    },
+    },    
     "aabbab8a-cdef-4012-b456-716e85c65e9c": {
       "type": "rule",
       "properties": {
-        "field": "slider",
+        "field": "acc_balance",
         "operator": "equal",
         "value": [
-          35
+          4000
         ],
         "valueSrc": [
           "value"

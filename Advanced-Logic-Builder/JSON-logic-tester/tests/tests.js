@@ -60,7 +60,6 @@ QUnit.module("applies() tests", {
     var done = assert.async();
 
     remote_or_cache(
-      // "https://jsonlogic.com/tests.json",
       "tests.json",
       "applies() tests"
     ).then(tests => {

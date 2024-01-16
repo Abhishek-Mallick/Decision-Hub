@@ -3,7 +3,7 @@
 
 <hr>
 
-<img align="right" height="300px" padding="20px" src="https://media.giphy.com/media/HUplkVCPY7jTW/giphy.gif">
+<img align="right" height="300px" padding="20px" src="https://decisionhub.pythonanywhere.com/static/images/server-animate.svg">
 
 # Problem Statement
 

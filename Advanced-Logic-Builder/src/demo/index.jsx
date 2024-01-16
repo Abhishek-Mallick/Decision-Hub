@@ -10,7 +10,7 @@ import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 const stringify = JSON.stringify;
 const {jsonLogicFormat, queryString, mongodbFormat, sqlFormat, getTree, checkTree, loadTree, uuid, loadFromJsonLogic} = Utils;
-const preStyle = { backgroundColor: "darkgrey", margin: "10px", padding: "10px" };
+const preStyle = { backgroundColor: "#74c69d", margin: "10px", padding: "10px" };
 const preErrorStyle = { backgroundColor: "lightpink", margin: "10px", padding: "10px" };
 
 const emptyInitValue = {"id": uuid(), "type": "group"};

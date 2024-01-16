@@ -2,7 +2,8 @@ import React from "react";
 import { render } from "react-dom";
 import Demo from "./demo";
 
-import "@react-awesome-query-builder/ui/css/styles.scss";
+// import "@react-awesome-query-builder/ui/css/styles.scss";
+import styles from "./cs/styles.scss";
 
 function App() {
   return (

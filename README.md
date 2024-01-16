@@ -41,34 +41,19 @@ Pinpoint and rectify errors efficiently, ensuring the reliability and accuracy o
 ## Wireframe
 ![archi](https://github.com/Abhishek-Mallick/Decision-Hub/assets/90705452/9ec2a192-a7c4-4305-899f-bc3e82ebaa26)
 
-## Demo
-[Query Builder](https://decisionhub.pythonanywhere.com/)
-<br>
-[Decision-Updater](https://decision-hub.vercel.app/)
 
-https://github.com/Abhishek-Mallick/Decision-Hub/assets/106394426/be16128c-2f95-405f-b5f6-005eb5e9666a
+## Contribution
 
-## Deployment
-
-To deploy this project run
-
-#### Query Builder 
-
-DataSphere-Explorer
-npm install
-npm install -g serve
-npm run build
-serve -s dist
-```bash
-    cd client -> npm install npm run dev
-    cd server -> npm install npm start
 ```
-#### DataSphere-Explorer
-```bash
-npm install
-npm install -g serve
-npm run build
-serve -s dist
+
+git clone https://github.com/Abhishek-Mallick/Decision-Hub
+
+cd Decision-Hub
+
+pip install -r requirements.txt
+
+flask run
+
 ```
 
 

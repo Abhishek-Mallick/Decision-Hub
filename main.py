@@ -5,16 +5,15 @@ from flask import render_template, request, redirect, url_for, session
 from flask import Flask
 import os
 import sqlite3
-import dotenv
+from dotenv import load_dotenv
 
 app = Flask(__name__)
 app.secret_key = 'MYSECRETKEY'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
-app.config['UPLOAD_FOLDER'] = 'uploads'
 db = SQLAlchemy(app)
-dotenv.load_dotenv()
 
 palm.configure(api_key=os.getenv('API_KEY'))
+
 
 models = [m for m in palm.list_models() if 'generateText' in m.supported_generation_methods]
 
@@ -34,22 +33,7 @@ def create_tables():
 def generate_solution(prompt):
     completion = palm.generate_text(
         model=model,
-        prompt="You are an expert at Converting the normal plain english text to Query Language.Here i will be sending a plain text convert it and provide the query statemnts only and no extra quotes:"+prompt,
-        temperature= 0.4,
-        candidate_count=1,
-        top_k= 40,
-        top_p= 0.95,
-        max_output_tokens= 1024
-    )
-    
-    result = completion.result
-    
-    return result
-
-def generate_excel(prompt):
-    completion = palm.generate_text(
-        model=model,
-        prompt="You are an expert at Converting the normal plain english text to Excel function.Here i will be sending a plain text convert it and just show the excel function and no extra quotes for :"+prompt,
+        prompt="You are an expert at Converting the normal plain english text to Query Language.Here i will be sending a plain text convert it :"+prompt,
         temperature= 0.4,
         candidate_count=1,
         top_k= 40,
@@ -143,46 +127,46 @@ def login():
         user = User.query.filter_by(username=username, password=password).first()
         if user:
             session['user_id'] = user.id
-            return redirect(url_for('dashboard'))
+            return redirect(url_for('texttoquery'))
     return render_template('login.html')
 
-@app.route('/dashboard')
-def dashboard():
-    username = None
-    if 'user_id' in session:
-        user = User.query.get(session['user_id'])
-        username = user.username
-        return render_template('dashboard.html',username=username)
-    return render_template('index.html')
+# @app.route('/texttoquery.html', methods=['GET', 'POST'])
+# def texttoquery():
+#     if 'user_id' in session:
+#         user = User.query.get(session['user_id'])
+#         if user:
+#             query_results = None
+#             table_schema = None
+#             username = user.username
+#             solution = None
+#             if request.method == 'POST':
+             
+#                 uploaded_file = request.files['database_file']
+#                 user_prompt = request.form.get('user_text')
+                
+#                 # Save the file to a temporary location
+#                 database_file_path = os.path.join('uploads', uploaded_file.filename)
+#                 uploaded_file.save(database_file_path)
+                
+                
+#                 solution = generate_solution(user_prompt)
+                
+                
+#                 query_results = execute_query(database_file_path, solution)
 
-@app.route('/querybuilder')
-def querybuilder():
-    username = None
-    if 'user_id' in session:
-        user = User.query.get(session['user_id'])
-        username = user.username
-        return render_template('querybuilder.html',username=username)
-    return render_template('index.html')
+                
+#                 table_schema = get_table_schema(database_file_path)
+                
+#                 # Remove the temporary file
+#                 os.remove(database_file_path)
+                
+                
+                
+#             return render_template('texttoquery.html',solution=solution,username=username,query_results=query_results,table_schema=table_schema)
 
-@app.route('/Visualizer')
-def Visualizer():
-    username = None
-    if 'user_id' in session:
-        user = User.query.get(session['user_id'])
-        username = user.username
-        return render_template('Visualizer.html',username=username)
-    return render_template('index.html')
+#     return redirect(url_for('login'))
 
-@app.route('/logictester')
-def logictester():
-    username = None
-    if 'user_id' in session:
-        user = User.query.get(session['user_id'])
-        username = user.username
-        return render_template('logictester.html',username=username)
-    return render_template('index.html')
-
-@app.route('/texttoquery', methods=['GET', 'POST'])
+@app.route('/texttoquery.html', methods=['GET', 'POST'])
 def texttoquery():
     if 'user_id' in session:
         user = User.query.get(session['user_id'])
@@ -192,60 +176,20 @@ def texttoquery():
             username = user.username
             solution = None
             if request.method == 'POST':
-             
-                uploaded_file = request.files['database_file']
                 user_prompt = request.form.get('user_text')
-                
-           
-                database_file_path = os.path.join('uploads', uploaded_file.filename)
-                uploaded_file.save(database_file_path)
-                
-                
-                solution = generate_solution(user_prompt)
-                
-                
-                query_results = execute_query(database_file_path, solution)
 
-                
-                table_schema = get_table_schema(database_file_path)
-                
-                # os.remove(database_file_path)
-                
-                
-                
-            return render_template('texttoquery.html',solution=solution,username=username,query_results=query_results,table_schema=table_schema)
+                # Generate solution directly from the user prompt
+                solution = generate_solution(user_prompt)
+
+                # Execute query based on the generated solution
+                # query_results = execute_query(solution)
+
+                # Get table schema (if needed) based on the generated solution
+                # table_schema = get_table_schema(solution)
+
+            return render_template('texttoquery.html', solution=solution, username=username)
 
     return redirect(url_for('login'))
-
-@app.route('/texttoexcel',methods=['GET', 'POST'])
-def texttoexcel():
-    if 'user_id' in session:
-        user = User.query.get(session['user_id'])
-        if user:
-            username = user.username
-            excel_solution = None
-            if request.method == 'POST':
-                user_prompt = request.form.get('user_text') 
-                excel_solution = generate_excel(user_prompt)
-        return render_template('texttoexcel.html',username=username,excel_solution=excel_solution)
-    return render_template('index.html')
-
-@app.route('/termsandservice',methods=['GET', 'POST'])
-def termsandservice():
-    return render_template('terms-and-services.html')
-
-@app.route('/about',methods=['GET', 'POST'])
-def about():
-    return render_template('about.html')
-
-@app.route('/userhistory')
-def userhistory():
-    username = None
-    if 'user_id' in session:
-        user = User.query.get(session['user_id'])
-        username = user.username
-        return render_template('user-history.html',username=username)
-    return render_template('index.html')
 
 @app.route('/logout')
 def logout():
@@ -253,6 +197,7 @@ def logout():
     return redirect(url_for('index'))  
 
 if __name__ == '__main__':
+    # Create the 'uploads' folder if it doesn't exist
     if not os.path.exists('uploads'):
         os.makedirs('uploads')
     create_tables()

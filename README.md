@@ -9,28 +9,49 @@
 
 Develop a Rule Builder application "DecisionHub" that empowers Business Analysts to create, save,and visualize decision strategies.
 Provide a no-code rule writing experience andvisual representation to test <br> these rules in real-time and observe the calculations at each step.
+
 # Decision Hub 
 
-Decision Hub is an application tailored to streamline the challenges encountered by Business Analysts in creating, storing, and visualizing decision strategies. Fueled by advanced language models (LLM Powered Generative AI) and innovative <br> methodologies, this tool offers a user-friendly,seamless, no-code rule-writing experience tailored for analysts who may not have programming expertise.
+Decision Hub is an application tailored to streamline the challenges encountered by Business Analysts in creating, storing, and visualizing decision strategies. Fueled by advanced language models (LLM Powered Generative AI) and innovative methodologies, this tool offers a user-friendly,seamless, no-code rule-writing experience tailored for analysts who may not have programming expertise.
 
 Decision Hub is a comprehensive solution with distinct sections, each catering to specific needs: 
 
 Rule Builder for creation and visualization, Rule Management for database control, and Debugger for real-time testing. Elevate your decision-making processes with a user-centric approach that empowers analysts to navigate the complexities of rule crafting effortlessly.
 
-### Rule Builder
+### SOLUTION 1 : ENGLISH LIKE RULE WRITING
+#### TEXT TO QUERY : Natural Language Processing with Contextual Reasoning
+DecisionHub utilizes customized Code Llama 2 for contextual reasoning.Users can upload databases to test queries generated from English-like rules, ensuring accuracy. The system also provides insights into the database schema, enhancing rule implementation reliability.
+DecisionHub can convert plain English rules into executable database queries through natural language processing (NLP) techniques like Code Llama 2.
 
-Effortlessly create, save, and visualize rules, intricately linked to the rules database.
-Intuitive design for a seamless rule-writing experience, ensuring accessibility for analysts with varying technical backgrounds.
 
-### Rule Management
+### SOLUTION 2 : SUPPORT FOR ADVANCED CONDITIONALS
+#### Support for advanced conditionals further enhances the capabilities of the Rule Builder
 
-Centralized control to add, modify and remove rules within the rules database.
-Simplifies rule governance, enabling swift adjustments to align decision strategies with evolving business requirements.
+DecisionHub enables business analysts to instantly prototyping and execute sophisticated data-driven decision strategies without coding through language models like Code Llama 2
 
-### Debugger
+* Offers intelligent query merging capabilities, allowing users to combine two queries seamlessly through Nested Rules.
+* Ideal for scenarios where complex data filtering or retrieval requires the refinement of search criteria.
+* Empowers users to interact with the query builder effortlessly, creating a seamless and intuitive experience.
+* No-Code Query Builder & Executor - Automatically convert conditional statements, spreadsheet-style formulas into fast-executing queries
 
-Real-time testing functionality, facilitating the observation of calculations.
-Pinpoint and rectify errors efficiently, ensuring the reliability and accuracy of decision rules.
+
+### SOLUTION 3 : AGILITY IN QUICKLY CHANGING RULES
+#### DYNAMIC RULE MODIFICATION : Drag-n-drop support for rules and group of rules
+
+* DecisionHub empowers analysts to quickly modify and test strategies by adjusting rules in real-time. The interface allows observing calculations to reduce errors and streamline adapting to evolving requirements. 
+
+* Rule Manager provides a visual query builder for advanced search/filtering on sites and apps. Its flexibility and customization benefit projects requiring complex queries without code.
+
+* User Friendly Interface: It provides a simple yet powerful visual interface for non-technical users to build advanced queries in a click-and-drag manner without needing to know SQL or other query languages.
+* Server-Side Compatible: Queries built with Rule Manager can be converted to JSON, XML , SQL or other formats compatible with server-side frameworks like Laravel, Django, Rails etc. allowing seamless integration.
+
+### SOLUTION 4 : DEBUGGING RULES QUICKLY
+#### REAL TIME DEBUGGING  : To pinpoint and rectify logical errors in rules
+* To tackle the complexity of managing thousands of rules, our application provides an easy-to-use mechanism for checking the logic of each portion of calculations rapidly.  Analysts can run rules swiftly and double click to identify potential issues or incorrect conditions within their decision  strategies.
+
+* Interactive Debugging: The builder allows adding breakpoints to pause execution and inspect values at any point for easier debugging of queries and logic.
+* Clear Error Messages: Invalid queries or values are detected immediately with clear errors displayed in the builder interface to quickly identify and fix issues.
+* Trace Query Execution: Each query change is tracked to easily trace why results are unexpected, facilitating debugging of complex queries with multiple rules and conditions.
 
 
 

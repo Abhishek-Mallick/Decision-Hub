@@ -6,6 +6,7 @@ from flask import Flask
 import os
 import sqlite3
 import dotenv
+from model import LLM
 
 app = Flask(__name__)
 app.secret_key = 'MYSECRETKEY'
@@ -13,12 +14,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['UPLOAD_FOLDER'] = 'uploads'
 db = SQLAlchemy(app)
 dotenv.load_dotenv()
-
-palm.configure(api_key=os.getenv('API_KEY'))
-
-models = [m for m in palm.list_models() if 'generateText' in m.supported_generation_methods]
-
-model = models[0].name #chat-bison-001
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -32,7 +27,7 @@ def create_tables():
 
 
 def generate_solution(prompt):
-    completion = palm.generate_text(
+    completion = LLM.generate_text(
         model=model,
         prompt="You are an expert at Converting the normal plain english text to Query Language.Here i will be sending a plain text convert it and provide the query statemnts only and no extra quotes:"+prompt,
         temperature= 0.4,
@@ -47,7 +42,7 @@ def generate_solution(prompt):
     return result
 
 def generate_excel(prompt):
-    completion = palm.generate_text(
+    completion = LLM.generate_text(
         model=model,
         prompt="You are an expert at Converting the normal plain english text to Excel function.Here i will be sending a plain text convert it and just show the excel function and no extra quotes for :"+prompt,
         temperature= 0.4,
@@ -62,16 +57,16 @@ def generate_excel(prompt):
     return result
 
 def execute_query(database_file, query):
-    query_results = None  # Initialize with a default value
+    query_results = None 
     try:
-        # Connect to the database
+      
         connection = sqlite3.connect(database_file)
         cursor = connection.cursor()
 
-        # Execute the query
+   
         cursor.execute(query)
 
-        # Fetch the results if the query is a SELECT statement
+ 
         if query.strip().lower().startswith('select'):
             query_results = cursor.fetchall()
         else:
@@ -81,7 +76,7 @@ def execute_query(database_file, query):
         query_results = f"Error executing the query: {e}"
 
     finally:
-        # Close the database connection
+      
         if connection:
             connection.close()
 
@@ -91,15 +86,14 @@ def execute_query(database_file, query):
 def get_table_schema(database_file):
     table_schema = {}
     try:
-        # Connect to the database
+    
         connection = sqlite3.connect(database_file)
         cursor = connection.cursor()
 
-        # Get the table names
         cursor.execute("SELECT name FROM sqlite_master WHERE type='table';")
         tables = cursor.fetchall()
 
-        # Get the schema for each table
+      
         for table in tables:
             table_name = table[0]
             cursor.execute(f"PRAGMA table_info({table_name});")
@@ -110,7 +104,7 @@ def get_table_schema(database_file):
         return f"Error fetching table schema: {e}"
 
     finally:
-        # Close the database connection
+       
         if connection:
             connection.close()
 
@@ -209,7 +203,7 @@ def texttoquery():
                 
                 table_schema = get_table_schema(database_file_path)
                 
-                # os.remove(database_file_path)
+                os.remove(database_file_path)
                 
                 
                 

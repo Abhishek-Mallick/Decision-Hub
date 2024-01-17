@@ -1,44 +1,192 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html lang="en-us">
 <head>
-    <meta charSet="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
+    <meta charset="utf-8">
+    <meta http-equiv="Accept-CH" content="DPR">
+    <link rel="preconnect" href="https://cdn.cookielaw.org" />
+    <link rel="dns-prefetch" href="https://cdn.cookielaw.org" />
     <title>DecisionHub</title>
-    <link rel="stylesheet" href="../static/css/b3766ade87b84a8c.css" type="text/css" />
-    <link rel="icon" href="../static/images/database-check-7195721-5847177.webp">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="../static/images/database-solid.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="/assets/images/global/favicon.ico">
+    <link rel="stylesheet" href="../static/css/cleanstyles/register_clean.css">
+    <link rel="preconnect" href="//logx.optimizely.com">
 </head>
-
 <body>
+    <div class="react-root">
+        <div>
+            <div>
+                <section>
+                    <div>
+                        <div>
+                            <header>
+                                <a href="#" target="_blank" class="css-1ou1gss">
+                                    <a href="#" target="_blank" class="css-xltjo7">
+                                        <img src="../static/images/dhub_alt.png" alt=" logo" /></a>
+                            </header>
 
-    <div
-        class="w-full h-screen bg-[url(https://images.unsplash.com/photo-1613946709284-0aa74f040a12?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] bg-zinc-300 flex items-center justify-center">
-        <div class="w-[25vw] bg-white px-20  py-10 rounded-[30px]">
-            <h1 class="text-3xl text-center tracking-tighter leading-none capitalize font-semibold text-zinc-700">
-                Create new account</h1>
-            <form method="POST" action="{{ url_for('register') }}">
-                <input class="border-2 rounded-md block w-full mt-4 px-3 py-2 " type="text" id="username" name="username" required
-                    placeholder="username">
-                <input class="border-2 rounded-md block w-full mt-2 px-3 py-2 " type="email" name="email"
-                    placeholder="email">
-                <input class="border-2 rounded-md block w-full mt-2 px-3 py-2 " type="number" name="contact"
-                    placeholder="contact">
-                <input class="border-2 rounded-md block w-full mt-2 px-3 py-2" type="password" id="password" name="password" required
-                    placeholder="password">
-    
-                <input class="border-2 block w-full mt-2 px-3 py-2 bg-blue-600 text-white rounded-full" type="submit"
-                    value="Create New Account">
-                <p class="font-semibold text-zinc-700 mt-10 text-center text-xs">By continuing, you agree to DicisionHub's
-                    Terms of Service; Opens a new tab and acknowledge you've read our Privacy
-                    Policy. Notice at collection.
-                </p>
-            </form>
-            <a class="inline-block mt-7 text-sm font-semibold text-zinc-700 text-center w-full" href="{{ url_for('login') }} ">Login Existing
-                Account</a>
+                            <div class="css-njz9um">
+                                <img src="static/images/dhub_alt.png"
+                                    style="width: 18rem; height: 3 rem; margin-top: -0.5rem;" alt="DecisionHub logo"
+                                    class="css-1po24pn" />
+                                </a>
+                                <div class="css-17tn9a7">
+
+                                    <ul class="css-1alq3sz">
+
+                                        <li class="css-1dkn0tw">
+                                            <span class="css-f99bef"></span>
+                                            <span class="css-1ob47mn">Rule Builder and SQL Converter</span>
+                                            <span class="css-1ipljq2">Effortlessly create, save, and visualize rules,
+                                                intricately linked to the rules database.Intuitive design for a seamless
+                                                rule-writing experience, translating decision strategies to SQL</span>
+                                        </li>
+                                        <li class="css-1dkn0tw"><span class="css-f99bef"></span><span
+                                                class="css-1ob47mn">Effortless Rule Management</span><span
+                                                class="css-1ipljq2">Centralized control to add, modify and remove rules
+                                                within the rules database.Simplifies rule governance, enabling swift
+                                                adjustments to align decision strategies with evolving business
+                                                requirements.
+                                                .</span></li>
+                                        <li class="css-1dkn0tw"><span class="css-f99bef"></span><span
+                                                class="css-1ob47mn">Real-Time Debugging</span><span
+                                                class="css-1ipljq2">Real-time testing functionality, facilitating the
+                                                observation of calculations. Pinpoint and rectify errors efficiently,
+                                                ensuring the reliability and accuracy of decision rules. </span></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="css-lnrfwp">
+                                <div>
+                                    <div class="css-1d6bs1n" style="width: 50vw;">
+                                        <h4 class=" css-1ikc9d">Register</h4>
+                                        <span class=" css-1lca2vn">Explore the power of DecisionHub !</span>
+                                        <form id="atlas-form" method="post" action="{{url_for('register')}}"
+                                            class=" css-s8bm2o">
+                                            <div class="css-8oysku">
+                                                <div class="css-10rgs3r">
+                                                    <div class="css-2wwfae">
+                                                        <div aria-label="input-box" class="css-m9ao1m">
+                                                            <div class="css-11oo1fi">
+                                                                <input type="text" id="firstName" name="username"
+                                                                    class="css-icbtsy" placeholder="First Name*"
+                                                                    style="margin-bottom: 50px;"
+                                                                    aria-label="First Name*"
+                                                                    oninput="hidePlaceholder()" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="css-8oysku">
+                                                <div class="css-10rgs3r">
+                                                    <div class="css-2wwfae">
+                                                        <div aria-label="input-box" class="css-m9ao1m">
+                                                            <div class="css-11oo1fi">
+                                                                <input type="text" id="lastName" name="lastName"
+                                                                    class="css-icbtsy" placeholder="Last Name*"
+                                                                    style="margin-bottom: 50px;" aria-label="Last Name"
+                                                                    oninput="hidePlaceholder()" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="css-8oysku">
+                                                <div class="css-10rgs3r">
+                                                    <div class="css-2wwfae">
+                                                        <div aria-label="input-box" class="css-m9ao1m">
+                                                            <div class="css-11oo1fi">
+                                                                <input type="text" id="company" name="company"
+                                                                    class="css-icbtsy" placeholder="Company"
+                                                                    style="margin-bottom: 50px;" aria-label="Company"
+                                                                    oninput="hidePlaceholder()" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="css-8oysku">
+                                                <div class="css-10rgs3r">
+                                                    <div class="css-2wwfae">
+                                                        <div aria-label="input-box" class="css-m9ao1m">
+                                                            <div class="css-11oo1fi">
+                                                                <input type="text" id="email" name="email"
+                                                                    class="css-icbtsy" placeholder="Email*"
+                                                                    style="margin-bottom: 50px;" aria-label="Email"
+                                                                    oninput="hidePlaceholder()" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="css-8oysku">
+                                                <div class="css-10rgs3r">
+                                                    <div class="css-2wwfae">
+                                                        <div aria-label="input-box" class="css-m9ao1m">
+                                                            <div class="css-11oo1fi">
+                                                                <input type="text" id="password" name="password"
+                                                                    class="css-icbtsy" placeholder="Password"
+                                                                    style="margin-bottom: 50px;" aria-label="Password"
+                                                                    oninput="hidePlaceholder()" />
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="css-8oysku">
+                                                <div class class>
+                                                    <input type="checkbox" id="terms" name="terms" class="css-43wgwk" />
+
+                                                    <label aria-label="terms" for="terms" class="css-1bzyp4q">
+                                                        <span aria-label="checkbox" class="css-iljbaq">
+                                                            <span class="css-10co30m">
+                                                                <span class="css-1pic5ad"></span></span></span>
+                                                        <span class="css-iiyv20"><span>I agree to the <a
+                                                                    href="{{url_for('termsandservice')}}"
+                                                                    target="_blank" rel="noreferrer"
+                                                                    style="text-decoration: none; color: #001E2B; font-weight: bold;">Terms
+                                                                    of Service</a> </span></span>
+                                                        <span class=" css-rw7gwv"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="css-x4n4mc">
+
+                                                <div class="css-1myrko">
+                                                    <button type="submit" tabIndex="0" class=" css-p08qec"
+                                                        style="display: block; margin: 0 auto; text-align: center;">Create
+                                                        your Account</button>
+                                                </div>
+                                                <span class=" css-ldhe1">
+                                                    <a href="{{url_for('login')}}" class="css-bbvbqc">Sign
+                                                        in</a>
+                                                </span>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            <footer class="css-path20">
+                                <span class=" css-1as0ge5">© 2024 DecisionHub.</span>
+                                <a tabIndex="0" href="https://linktr.ee/decisionHub" target="_blank" data-track="true"
+                                    class="css-x59kef">
+                                    <span class="css-z24ew8">
+                                        <span>Contact</span>
+                                    </span>
+                                </a>
+                                <a tabIndex="0" href="{{url_for('termsandservice')}}" target="_blank"
+                                    data-track="true"><span><span>Terms
+                                            &amp;
+                                            Conditions</span></span>
+                                </a>
+                            </footer>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </div>
     </div>
-
 </body>
-
 </html>

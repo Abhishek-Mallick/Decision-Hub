@@ -1,8 +1,4 @@
-/* globals define,module */
-/*
-Eta use korchi for module loader
-http://ricostacruz.com/cheatsheets/umdjs.html
-*/
+
 ;(function(root, factory) {
   if (typeof define === "function" && define.amd) {
     define(factory);
@@ -13,7 +9,6 @@ http://ricostacruz.com/cheatsheets/umdjs.html
   }
 }(this, function() {
   "use strict";
-  /* globals console:false */
 
   if ( ! Array.isArray) {
     Array.isArray = function(arg) {
@@ -83,7 +78,6 @@ http://ricostacruz.com/cheatsheets/umdjs.html
     },
     "substr": function(source, start, end) {
       if (end < 0) {
-        // JavaScript doesn't support negative end, this emulates PHP behavior
         var temp = String(source).substr(start);
         return temp.substr(0, temp.length + end);
       }

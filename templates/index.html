@@ -1,363 +1,332 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-us">
 
 <head>
-    <meta charSet="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
+    <meta charset="utf-8">
+    <meta http-equiv="Accept-CH" content="DPR">
+
     <title>DecisionHub</title>
-    <link rel="stylesheet" href="../static/css/b3766ade87b84a8c.css" type="text/css" />
-    <link rel="icon" href="../static/images/database-check-7195721-5847177.webp">
-    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="icon" href="../static/images/database-solid.svg" type="image/x-icon">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="../static/css/cleanstyles/index_clean.css" > 
+
 </head>
 
 <body>
-    <div id="__next">
-        <div
-            class="min-h-full text-gray-50 font-sans w-full antialiased tracking-wide flex flex-col items-center scroll-smooth ">
-            <section class="w-full min-h-screen h-full">
-                <header class="absolute top-0 right-0 pointer-events-none">
+    <div>
+        <div style="position: sticky; top: 0px; z-index: 9999; width: 100%;">
+            <nav role="navigation" class="cssNav">
 
-                    {% if username %}
-                    <div
-                        class="relative bg-white/10 hover:bg-white/5 backdrop-blur-sm p-2 mt-2 -mb-3 mr-2 rounded-full z-0 w-fit pointer-events-auto cursor-pointer">
-                        <a class="flex font-normal gap-x-3 sm:px-1 items-center" href="{{ url_for('logout') }}">
-                            <div class="hidden sm:block">Logout</div><svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"
-                                class="w-7 h-7">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z">
-                                </path>
-                            </svg>
-                        </a>
-                    </div>
-                    {% else %}
-                    <div
-                        class="relative bg-white/10 hover:bg-white/5 backdrop-blur-sm p-2 mt-2 -mb-3 mr-2 rounded-full z-0 w-fit pointer-events-auto cursor-pointer">
-                        <a class="flex font-normal gap-x-3 sm:px-1 items-center" href="{{ url_for('login') }} ">
-                            <div class="hidden sm:block">Login</div><svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"
-                                class="w-7 h-7">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z">
-                                </path>
-                            </svg>
-                        </a>
-                    </div>
-                    {% endif %}
-
-                </header>
-                <section class="h-full min-h-screen w-full flex flex-col justify-around items-center py-5 px-5 gap-y-5 "
-                    style="background-image: url('https://images.unsplash.com/photo-1613946709284-0aa74f040a12?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; position:center;">
-                    <div>
-                        <h1 class="text-center text-xl sm:text-3xl font-extrabold"><span
-                                class="text-white">Decision</span><span class="text-white">Hub</span></h1>
-
-                        <h1
-                            class="text-center text-5xl sm:text-7xl md:text-7xl m-1 font-extrabold w-full max-w-3xl text-white">
-
-                            <span data-br=":R2cb6:" data-brr="1"
-                                style="display:inline-block;vertical-align:top;text-decoration:inherit;text-wrap:balance">Generate
-                                SQL with LLM in seconds!</span>
-                        </h1>
-                    </div>
-
-                    <!-- <div class="h-1 w-full bg-white rounded-3xl md:max-w-[60rem] " ></div> -->
-                    <div class="w-full max-w-lg flex flex-col justify-center items-center">
-                        <h2 as="h2" class="w-full my-5 text-xl sm:text-2xl text-gray-300 text-center" data-br=":R1kb6:"
-                            data-brr="1"
-                            style="display:inline-block;vertical-align:top;text-decoration:inherit;text-wrap:balance">
-                            Generate and explain optimized SQL queries using AI! Improve your skills and save time:</h2>
-
-                        <div
-                            class="relative w-full mx-auto bg-gradient-to-b from-gray-800 to-[#1b5888]/80 rounded-3xl p-[1px] font-mono">
-                            <div class="w-full h-fit rounded-t-3xl bg-black overflow-hidden"><textarea disabled=""
-                                    class="bg-gray-900 block border-none outline-none resize-none w-full p-3 text-xs sm:text-sm whitespace-pre-wrap"
-                                    rows="2" placeholder="Type Your English Text here"
-                                    aria-label="Type your English text here"
-                                    readonly="">find all users who live in California and have over 1000 credits</textarea>
-                            </div>
-                            <div class="absolute -translate-y-3 w-full flex items-center justify-center">
-                                <div class="bg-[#0e3049] w-fit p-0.5 rounded-full cursor-pointer"><svg
-                                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-                                        aria-hidden="true" class="h-6 w-6 text-gray-300 animate-spin">
-                                        <path fill-rule="evenodd"
-                                            d="M15.312 11.424a5.5 5.5 0 01-9.201 2.466l-.312-.311h2.433a.75.75 0 000-1.5H3.989a.75.75 0 00-.75.75v4.242a.75.75 0 001.5 0v-2.43l.31.31a7 7 0 0011.712-3.138.75.75 0 00-1.449-.39zm1.23-3.723a.75.75 0 00.219-.53V2.929a.75.75 0 00-1.5 0V5.36l-.31-.31A7 7 0 003.239 8.188a.75.75 0 101.448.389A5.5 5.5 0 0113.89 6.11l.311.31h-2.432a.75.75 0 000 1.5h4.243a.75.75 0 00.53-.219z"
-                                            clip-rule="evenodd"></path>
-                                    </svg></div>
-                            </div>
-                            <div
-                                class="absolute bottom-3 right-5 w-fit text-black px-1.5 py-0.5 rounded-sm opacity-50 hover:opacity-100 font-sans text-xs bg-white font-semibold">
-                                No SQL knowledge required!</div>
-                            <div class="w-full rounded-b-3xl bg-black mt-[1px] overflow-hidden"><textarea disabled=""
-                                    class="bg-gray-900 block border-none outline-none resize-none w-full p-3 pt-4 text-xs sm:text-sm whitespace-pre-wrap"
-                                    rows="5" placeholder="Your AI-generated output"
-                                    aria-label="Your AI-generated output" readonly="">SELECT * FROM users
-WHERE state=&#x27;CA&#x27; AND credits &gt; 1000; ...</textarea></div>
-                        </div>
-                    </div>
-                    <div class="w-full max-w-lg my-10 relative z-10">
-                        <a class="text-center w-full block bg-gradient-to-r from-[#1b5888]/70 to-[#1b5888]/90 hover:bg-[#1b5888] hover:scale-105 shadow-cta-blue font-bold text-lg sm:text-3xl rounded-3xl p-4 sm:p-5 transition-all"
-                            href="{{ url_for('texttoquery') }} ">
-                            Generate SQL with AI now!
-                        </a>
-
-                    </div>
-
-                    <div class="h-1 w-full bg-white rounded-3xl md:max-w-[60rem] "></div>
-
-                    <!-- <------------------------------------------------->
-
-                    <div class="w-full max-w-lg text-center">
-                        <h2 as="h2" class="w-full my-10 text-xl sm:text-2xl text-gray-200 text-center" data-br=":R2j6:"
-                            data-brr="1"
-                            style="display:inline-block;vertical-align:top;text-decoration:inherit;text-wrap:balance">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" aria-hidden="true" class="w-7 h-7 inline mr-1 stroke-2">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z">
-                                </path>
-                            </svg>Translate
-                            <span class="font-bold">Your Native Language</span>
-                            <!-- -->into Complex <span class="font-bold">SQL Queries</span> in seconds:
-                        </h2>
-
-                    </div>
-                    <div class="bg-transparent w-full max-w-lg h-fit mb-5">
-                        <div class="flex flex-col w-full max-w-lg">
-                            <div class="" id="headlessui-radiogroup-:Rcj6:" role="radiogroup"
-                                data-headlessui-state="value">
-                                <div class="flex gap-x-5 bg-gray-800 rounded-2xl p-1">
-                                    <div onclick="myFunction()"
-                                        class="cursor-pointer focus:outline-none rounded-xl text-center flex-1 p-2 font-medium whiteSwap "
-                                        id="headlessui-radiogroup-option-:Rdcj6:" role="radio" aria-checked="true"
-                                        tabindex="0" data-headlessui-state="checked"><span
-                                            class="inline-flex items-center gap-x-2" id="headlessui-label-:R1dcj6:"><svg
-                                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
-                                                fill="currentColor" aria-hidden="true" class="w-5 h-5">
-                                                <path fill-rule="evenodd"
-                                                    d="M15.312 11.424a5.5 5.5 0 01-9.201 2.466l-.312-.311h2.433a.75.75 0 000-1.5H3.989a.75.75 0 00-.75.75v4.242a.75.75 0 001.5 0v-2.43l.31.31a7 7 0 0011.712-3.138.75.75 0 00-1.449-.39zm1.23-3.723a.75.75 0 00.219-.53V2.929a.75.75 0 00-1.5 0V5.36l-.31-.31A7 7 0 003.239 8.188a.75.75 0 101.448.389A5.5 5.5 0 0113.89 6.11l.311.31h-2.432a.75.75 0 000 1.5h4.243a.75.75 0 00.53-.219z"
-                                                    clip-rule="evenodd"></path>
-                                            </svg>Generate</span>
+                <a href="{{url_for('index')}}" class="cssUrl"> 
+                    <img src="static/images/dhublogo.png" style="width: 17rem; height: 3rem; margin-top: -0.5rem;" alt="DecisionHublogo" class="css-c32ty2" />
+                </a>
+                
+                <div class="CssTop">
+                    <ul>
+                        <li>
+                            <button tabIndex="0" data-track="true" class="cssbot">
+                                <span class="textlink-default-text-class">
+                                    <div style="margin-left: 5px; padding-left: 10px;"><a style="text-decoration: none; color: #000000;" href="#service">Services</a>
                                     </div>
-                                    <div onclick="myFunction()"
-                                        class="cursor-pointer focus:outline-none rounded-xl text-center flex-1 p-2 font-medium darkBlueSwap"
-                                        id="headlessui-radiogroup-option-:Rlcj6:" role="radio" aria-checked="false"
-                                        tabindex="-1" data-headlessui-state=""><span
-                                            class="inline-flex items-center gap-x-2" id="headlessui-label-:R1lcj6:"><svg
-                                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                                stroke-width="1.5" stroke="currentColRegex
-                                                or" aria-hidden="true" class="w-5 h-5">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18">
-                                                </path>
-                                            </svg>Explain</span>
-                                    </div>
-                                </div>
+                                </span>
+                                </button>
+                           
+                        </li>
+                        <li class="header-nav-menu-item ">
+                            <a tabIndex="0" href="{{url_for('about')}}"data-track="true" class="css-3wsupk"><span class="css-1edz58y">
+                                <span class="textlink-default-text-class ">About</span></span>
+                            </a>
+                        </li>
+                        {% if username %}
+
+                        <li class="header-nav-menu-item css-2ath6f">
+                        
+                            <button tabIndex="0" data-track="true" class="css-3wsupk"><span class="css-1edz58y"><span
+                                        class="textlink-default-text-class css-aq3x7l">
+                                        <div style="margin-left: 20px; padding-left: 10px;">
+                                            <a style="text-decoration: none; color: #000000;" href="{{url_for('dashboard')}}">Dashboard</a>
+                                        </div>
+                                    </span></span>
+                            </button>
+                          
+                        </li>
+
+                        {% endif %}
+                        
+                        <div class="css-n8sm7x">
+                        
+                            <div class="css-1myrko">
+                                
+                                {% if username %}
+    
+                                <button tabIndex="0" data-track="true" class="header-desktop-button css-xtl1sx"><i class="fa-solid fa-user"></i> {{username}}</button>
+    
+                                {% else %}
+    
+                                <a tabIndex="0" href="{{url_for('login')}}" data-track="true" class="header-desktop-button css-xtl1sx">Sign in</a>
+    
+                                {% endif %}
+    
+                               
                             </div>
-                            <div class="mt-5" id="headlessui-radiogroup-:Rkj6:" role="radiogroup">
-                                <div class="flex gap-x-3 bg-gray-800 rounded-2xl p-1">
-                                    <div class="cursor-pointer focus:outline-none rounded-xl text-center flex-1 p-2 font-medium bg-gradient-to-r from-[#0785ff]/70 to-[#0785ff]/90 hover:bg-[#0785ff] text-white font-bold "
-                                        id="headlessui-radiogroup-option-:Rdkj6:" role="radio" aria-checked="true"
-                                        tabindex="0" data-headlessui-state="checked"><span
-                                            id="headlessui-label-:R1dkj6:">SQL</span></div>
-                                    <div class="cursor-pointer focus:outline-none rounded-xl text-center flex-1 p-2 font-medium  border-1 border-gray-600 ring-gray-700 bg-gray-900 text-gray-100"
-                                        id="headlessui-radiogroup-option-:Rlkj6:" role="radio" aria-checked="false"
-                                        tabindex="-1" data-headlessui-state=""><span
-                                            id="headlessui-label-:R1lkj6:"><span class="hidden sm:inline">Excel</span>
-                                            Formula</span>
-                                    </div>
-
-                                </div>
-                            </div>
+                            
                         </div>
-                    </div>
-                    <div class="w-full max-w-lg">
-                        <div
-                            class="relative w-full mx-auto bg-gradient-to-br from-gray-800 to-[#0785ff]/80 rounded-3xl p-[1px] font-mono">
-                            <div class="w-full h-fit rounded-t-3xl bg-black overflow-hidden"><textarea disabled=""
-                                    class="bg-gray-900 block border-none outline-none resize-none w-full p-3 pb-8 text-xs sm:text-sm whitespace-pre-wrap"
-                                    rows="5" placeholder="Type Your English Text here"
-                                    aria-label="Type your English text here"
-                                    readonly="">find all users who live in California and have over 1000 credits</textarea>
-                            </div>
-                            <div class="absolute -translate-y-5 w-full flex items-center justify-center">
-                                <div
-                                    class="relative bg-[#0785ff] w-fit py-2 px-3 rounded-full cursor-pointer inline-flex gap-x-2 font-sans font-semibold active:ring-2 ring-[#0785ff] ring-offset-2 ring-offset-black">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-                                        aria-hidden="true" class="h-6 w-6">
-                                        <path fill-rule="evenodd"
-                                            d="M15.312 11.424a5.5 5.5 0 01-9.201 2.466l-.312-.311h2.433a.75.75 0 000-1.5H3.989a.75.75 0 00-.75.75v4.242a.75.75 0 001.5 0v-2.43l.31.31a7 7 0 0011.712-3.138.75.75 0 00-1.449-.39zm1.23-3.723a.75.75 0 00.219-.53V2.929a.75.75 0 00-1.5 0V5.36l-.31-.31A7 7 0 003.239 8.188a.75.75 0 101.448.389A5.5 5.5 0 0113.89 6.11l.311.31h-2.432a.75.75 0 000 1.5h4.243a.75.75 0 00.53-.219z"
-                                            clip-rule="evenodd"></path>
-                                    </svg>Generate
-                                    Random Example<svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                        viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"
-                                        class="h-8 w-8 absolute -bottom-2 -right-4 animate-bounce">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                            d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-4.243l-1.59-1.59">
-                                        </path>
-                                    </svg>
-                                    <div
-                                        class="text-xs text-gray-500 hidden sm:block absolute bottom-0 -right-[9em] animate-pulse">
-                                        Click for demo!</div>
-                                </div>
-                            </div>
-                            <div class="w-full rounded-b-3xl bg-black mt-[1px] overflow-hidden"><textarea disabled=""
-                                    class="bg-gray-900 block border-none outline-none resize-none w-full p-3 pt-8 text-xs sm:text-sm whitespace-pre-wrap"
-                                    rows="10" placeholder="Your AI-generated output"
-                                    aria-label="Your AI-generated output" readonly="">SELECT * FROM users
-                    WHERE state=&#x27;CA&#x27; AND credits &gt; 1000;</textarea></div>
-                        </div>
-                    </div>
-
-
-
-
-
-                    <!-- --------------------------------------------------------------------- -->
-
-
-                    <h2 as="h2" class="w-full my-10 text-xl sm:text-2xl text-gray-200 text-center" data-br=":R2r6:"
-                        data-brr="1"
-                        style="display:inline-block;vertical-align:top;text-decoration:inherit;text-wrap:balance"><svg
-                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                            stroke="currentColor" aria-hidden="true" class="w-7 h-7 inline mr-1 mb-1 stroke-2">
-                            <path stroke-linecap="round" stroke-linejoin="round"
-                                d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125">
-                            </path>
-                        </svg> Use Your own database tables:</h2>
-
-                    <div class="w-full max-w-lg">
-                        <div
-                            class="relative w-full mx-auto bg-gradient-to-tl from-gray-800 to-[#0785ff]/80 rounded-3xl p-[1px] font-mono">
-                            <div class="w-full h-fit rounded-3xl bg-black overflow-hidden"><textarea disabled=""
-                                    class="bg-gray-900 block border-none outline-none resize-none w-full p-3 pb-8 text-xs sm:text-sm whitespace-pre-wrap"
-                                    rows="5" placeholder="Type Your English Text here"
-                                    aria-label="Type your English text here" readonly="">Employee (id, name, department_id);
-                    Department (id, name, address);
-                    Salary_Payments (id, employee_id, amount, date);</textarea></div>
-                        </div>
-                    </div>
-                    <div
-                        class="flex flex-wrap justify-center items-stretch content-evenly gap-x-5 gap-y-3 text-xs text-gray-300 mt-8">
-
-                        <div class="text-center flex flex-col items-center justify-between"><img alt="Postgres"
-                                src="../static/images/postgresql.png" width="50" height="50" decoding="async"
-                                data-nimg="1"
-                                class="p-2 w-14 h-14 bg-gray-100/5 rounded-2xl grayscale hover:grayscale-0"
-                                loading="lazy" style="color:transparent" />
-                            <div class="pt-1">PostgreSQL</div>
-                        </div>
-
-                        <div class="text-center flex flex-col items-center justify-between"><img alt="BigQuery"
-                                src="../static/images/bigquery.png" width="50" height="50" decoding="async"
-                                data-nimg="1"
-                                class="p-2 w-14 h-14 bg-gray-100/5 rounded-2xl grayscale hover:grayscale-0"
-                                loading="lazy" style="color:transparent" />
-                            <div class="pt-1">BigQuery</div>
-                        </div>
-
-                        <div class="text-center flex flex-col items-center justify-between"><img alt="MS SQL Server"
-                                src="../static/images/mysql.png" width="50" height="50" decoding="async" data-nimg="1"
-                                class="p-2 w-14 h-14 bg-gray-100/5 rounded-2xl grayscale hover:grayscale-0"
-                                loading="lazy" style="color:transparent" />
-                            <div class="pt-1">MS SQL</div>
-                        </div>
-                        <div class="text-center flex flex-col items-center justify-between"><img alt="SQLite"
-                                src="../static/images/Sqlite.png" width="50" height="50" decoding="async" data-nimg="1"
-                                class="p-2 w-14 h-14 bg-gray-100/5 rounded-2xl grayscale hover:grayscale-0"
-                                loading="lazy" style="color:transparent" />
-                            <div class="pt-1">SQLite</div>
-                        </div>
-                    </div>
-
-                    <div class="h-1 w-full bg-white rounded-3xl md:max-w-[60rem] "></div>
-                    <!-- <section class="w-full p-5 flex flex-col items-center" style="background-image:radial-gradient(at 50% 50%, #206b8b78 11px, transparent 100%)"> -->
-                    <section class="w-full p-5 flex flex-col items-center">
-                        <h2 as="h2" class="w-full my-8 text-xl sm:text-2xl text-gray-200 text-center" data-br=":R3r6:"
-                            data-brr="1"
-                            style="display:inline-block;vertical-align:top;text-decoration:inherit;text-wrap:balance">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                                stroke="currentColor" aria-hidden="true" class="w-7 h-7 inline mr-1 mb-1 stroke-2">
-                                <path stroke-linecap="round" stroke-linejoin="round"
-                                    d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z">
-                                </path>
-                            </svg>
-                            <!-- -->FAQ</h2>
-
-                        <div class="text-gray-300 w-full md:max-w-[50rem] text-sm text-justify">
-
-                            <div class="my-3">
-                                <div class="font-bold text-md text-white">Is the generation of responses always correct?
-                                </div>
-                                <div>Despite using the currently state-of-the-art Natural Language Processing tool
-                                    available,
-                                    its results can sometimes be inaccurate.
-                                    <!-- --><span class="bg-gray-800 px-1 py-0.5 rounded-md">Always check the output
-                                        before
-                                        using it in production</span>, and see hints for better performance (e.g. use
-                                    more
-                                    detailed sentences or incorporate your database scheme).
-                                </div>
-                            </div>
-                            <div class="my-3">
-                                <div class="font-bold text-md text-white">What are the potential use cases?</div>
-                                <div>This application serves as an excellent resource for beginners eager to learn SQL
-                                    query
-                                    writing. Moreover, it provides immense value to experts and professionals such as
-                                    <!-- --><span class="bg-gray-800 px-1 py-0.5 rounded-md">data analysts, data
-                                        scientists,
-                                        data engineers, and software developers</span>
-                                    <!-- -->who aim to improve their skills or streamline their workflow.<span
-                                        class="bg-gray-800 px-1 py-0.5 rounded-md">No prior knowledge required!</span>
-                                </div>
-                            </div>
-                            <div class="my-3">
-                                <div class="font-bold text-md text-white">Is my data safe?</div>
-                                <div><span class="bg-gray-800 px-1 py-0.5 rounded-md">Your data security is our
-                                        priority.</span>
-                                    <!-- -->We do not store any user input or generated output. All data processing
-                                    happens in
-                                    real-time and is discarded immediately after use. <span class="bg-gray-800 px-1 py-0.5 rounded-md">os.remove(database_file_path)</span>
-                                </div>
-                            </div>
-
-                            <div class="my-3">
-                                <div class="font-bold text-md text-white">How does it work?</div>
-                                <div>DecisionHub uses the LLM model and Natural Language Processing which can translate English prompts to
-                                    SQL
-                                    queries, and SQL queries to English text. It is currently the most advanced Natural
-                                    Language
-                                    Processing tool available, and this is the exact same model
-                                    which used by Github Copilot.</div>
-                            </div>
-
-                        </div>
-                    </section>
-                </section>
-            </section>
-
-
-
-            <footer class="w-full p-3">
-                <div class="text-xs text-white" style=" text-align: center;">DicisionHub @ 2023
+                        
+                    </ul>
+                    
+                    
                 </div>
 
-            </footer>
+            </nav>
         </div>
+        
+        <div class="css-18g2si4">
+            <div class="css-1r84kvf">
+                <span class=" css-z7exat"><span>We have all the resources you need to see how our developer data platform actually works.</span></span>
+            </div>
+        </div>
+        
+        <div aria-label="flex-container" class="css-8bmn33">
+                    
+            <div class="css-1fvxmpx">
+                
+                <div target="_self" data-track="true" class=" css-1amomaf">
+                    
+                    <div aria-label="card-header" class="css-180x1vp">
+                        <img
+                            src="https://webimages.com/_com_assets/icons/general_action_read.svg"
+                            alt="general_action_read" class=" css-bf2b28" />
+                    </div>
+                    <div class="css-cqkn2k">
+                        
+                        <div class="css-urdtjr">
+                            <p class=" css-5hsn6b"><span>Rule Builder: No-code, intuitive interface,
+                                    integrates LLM for transforming plain text into actionable queries,
+                                    simplifying technological complexities.</span></p>
+                        </div>                                        
+                    </div>
+                </div>
+            </div>
+            <div class="css-1fvxmpx">
+                <div  data-track="true" class=" css-1amomaf">
+                    <div aria-label="card-header" class="css-180x1vp"><img
+                            src="https://webimages.com/_com_assets/icons/general_content_community.svg"
+                            alt="general_content_community" class=" css-bf2b28" /></div>
+                    <div class="css-cqkn2k">
+                        <div class="css-urdtjr">
+                            <div class="css-1nf3kue">
+                                <h3 class=" css-2z5up9">Excel-Like Logic Support</h3>
+                            </div>
+                            <p class=" css-5hsn6b"><span>Our app eases Business Analysts' transition by
+                                    allowing Excel-like logic, converting arithmetic expressions into
+                                    rules for seamless familiarity. </span></p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="css-1fvxmpx">
+                <div  data-track="true" class=" css-1amomaf">
+                    <div aria-label="card-header" class="css-180x1vp"><img
+                            src="https://webimages/_com_assets/icons/realm_sync.svg"
+                            alt="general_content_community" class=" css-bf2b28" /></div>
+                    <div class="css-cqkn2k">
+                        <div class="css-urdtjr">
+                            <div class="css-1nf3kue">
+                                <h3 class=" css-2z5up9">Modification | Testing</h3>
+                            </div>
+                            <p class=" css-5hsn6b"><span>DecisionHub enables analysts to swiftly modify
+                                    and test decision strategies, offering a user-friendly interface for
+                                    real-time adjustments, reducing errors amid evolving business
+                                    requirements.</span></p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="css-1fvxmpx">
+                <div 
+                    data-track="true" class=" css-1amomaf">
+                    <div aria-label="card-header" class="css-180x1vp"><img
+                            src="https://webimages.com/_com_assets/icons/general_content_learn.svg"
+                            alt="general_content_learn" class=" css-bf2b28" /></div>
+                    <div class="css-cqkn2k">
+                        <div class="css-urdtjr">
+                            <div class="css-1nf3kue">
+                                <h3 class=" css-2z5up9">Efficient Logic Checking</h3>
+                            </div>
+                            <p class=" css-5hsn6b"><span>Our app simplifies managing numerous rules with
+                                    a user-friendly interface for swift logic checks, allowing quick
+                                    identification of potential issues.</span></p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="css-1fvxmpx">
+                <div 
+                    target="_self" data-track="true" class=" css-1amomaf">
+                    <div aria-label="card-header" class="css-180x1vp"><img
+                            src="https://webimages.com/_com_assets/icons/atlas_database.svg"
+                            alt="general_content_learn" class=" css-bf2b28" /></div>
+                    <div class="css-cqkn2k">
+                        <div class="css-urdtjr">
+                            <div class="css-1nf3kue">
+                                <h3 class=" css-2z5up9">Visualizer</h3>
+                            </div>
+                            <p class=" css-5hsn6b"><span>DecisionHub enables seamless database uploads, intuitive data visualization, and on-the-fly query execution, empowering users to generate insightful plots and trace data with ease.</span></p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="css-1fvxmpx">
+                <dev 
+                    target="_self" data-track="true" class=" css-1amomaf">
+                    <div aria-label="card-header" class="css-180x1vp"><img
+                            src="https://webimages.com/_com_assets/icons/atlas_data_federation.svg"
+                            alt="general_content_learn" class=" css-bf2b28" /></div>
+                    <div class="css-cqkn2k">
+                        <div class="css-urdtjr">
+                            <div class="css-1nf3kue">
+                                <h3 class=" css-2z5up9">User History</h3>
+                            </div>
+                            <p class=" css-5hsn6b"><span>DecisionHub empowers business analysts to securely save and manage relevant details, providing records of user interactions and data modifications.</span></p>
+                        </div>
+                        
+                    </div>
+                </dev>
+            </div>
+        </div>
+
+        
+        <section class="w-full css-z8ikyh">
+            <div>
+                
+
+            </div>
+        </section>
+        
+        
+        
+        <footer class="css-1j19lrv">
+            
+            <div class="css-rzknn9">
+                
+                <div class="css-icidv2">
+                    
+                    <div class="css-tucx3n">
+                        
+                        <div class="css-1a7nq3w">
+                            
+                            <a href="{{url_for('index')}}" class="css-12lgscj">
+                                <img src="static/images/dhublogowhite.png"  class="css-1oo7mu6" />
+                            </a>
+                        </div>
+                        
+                        <div class="css-r7mjl8">
+                            <img    src="https://webimages.com/_com_assets/cms/kr6zmbrgbwlke2l97-atlas-global-deployments.svg?auto=format%252Ccompress" />
+                            
+                            <div class="css-1w1kq">
+                                <button role="button" type="button" aria-label="Language Selector" class="css-6ruvy3">
+                                    <span data-testid="selected-value"
+                                        class="css-1rtqzz6">English
+                                    </span>
+                                    
+                                    <div class="css-109dpaz">
+                                        
+                                        <svg data-testid="icon" width="16" height="9" viewBox="0 0 16 9"
+                                            fill="none" xmlns="http://www.w3.org/2000/svg" class="css-1yzkxhp">
+                                            
+                                            <path d="M1.06689 0.799988L8.00023 7.73332L14.9336 0.799988"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="css-z2jj6c"></path>
+                                        </svg>
+                                    </div>
+                                </button>
+                                
+                                <div class="css-1700rf4">
+                                    
+                                    <ul data-testid="options" role="listbox" class="css-ac9zo2">
+                                        
+                                        <li role="option" tabIndex="0" class="css-naxvau">English</li>
+                                        <li role="option" tabIndex="0" class="css-naxvau">Português</li>
+                                        <li role="option" tabIndex="0" class="css-naxvau">Español</li>
+                                        <li role="option" tabIndex="0" class="css-naxvau">한국어</li>
+                                        <li role="option" tabIndex="0" class="css-naxvau">日本語</li>
+                                        <li role="option" tabIndex="0" class="css-naxvau">Italiano</li>
+                                        <li role="option" tabIndex="0" class="css-naxvau">Deutsch</li>
+                                        <li role="option" tabIndex="0" class="css-naxvau">Français</li>
+                                        <li role="option" tabIndex="0" class="css-naxvau">简体中文</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="css-148f6w8">© 2024 DecisionHub.</div>
+                </div>
+                
+                <div class="css-57n55j">
+                    
+                    <p class="css-of25nb">Home</p>
+                    
+                    <ul class="css-o17p1k">
+                        
+                        <li class="css-1w8osvb">
+                            <a href="#service" target="_self" rel="noreferrer noopener" class=" css-16ay36s">Services</a>
+                        </li>
+                        <li class="css-1w8osvb">
+                            <a href="{{url_for('about')}}" target="_self" rel="noreferrer noopener" class=" css-16ay36s">About</a>
+                        </li>
+                        <li class="css-1w8osvb">
+                            <a href="#faq" target="_self" rel="noreferrer noopener" class=" css-16ay36s">FAQ?</a>
+                        </li>
+                       
+                    </ul>
+                </div>
+                <div class="css-57n55j">
+                    <p class="css-of25nb">Support</p>
+                    <ul class="css-o17p1k">
+                        <li class="css-1w8osvb"><a href="{{url_for('dashboard')}}" target="_self"
+                                rel="noreferrer noopener" class=" css-16ay36s">Dashboard</a></li>
+                       
+                        <li class="css-1w8osvb"><a href="{{url_for('termsandservice')}}" target="_self" rel="noreferrer noopener"
+                                class=" css-16ay36s">Privacy</a></li>
+                    </ul>
+                </div>
+                <div class="css-57n55j">
+                    <p class="css-of25nb">Social</p>
+                    <ul class="css-o17p1k">
+                        <li class="css-1w8osvb">
+                            <a href="https://github.com/Abhishek-Mallick/Decision-Hub" target="_self" rel="noreferrer noopener"
+                                class=" css-16ay36s">
+                                
+                                <img
+                                    src="https://webimages.com/_com_assets/cms/kr6wrvghw9q75ytq1-github.svg?auto=format%252Ccompress"
+                                    alt class="css-1op5zr9" />GitHub
+                            </a>
+                        </li>
+                        <li class="css-1w8osvb"><a href="https://linktr.ee/decisionHub"
+                                target="_self" rel="noreferrer noopener" class=" css-16ay36s"><img
+                                    src="https://webimages.com/_com_assets/cms/kr6wsmr3g1ckzd0hs-linkedin.svg?auto=format%252Ccompress"
+                                    alt class="css-1op5zr9" />LinkedIn</a></li>
+                    </ul>
+                </div>
+                
+                <div class="css-1km7ddl">© 2024 DecisionHub.</div>
+            </div>
+        </footer>
     </div>
-    <script>
-        function myFunction() {
-            var element1 = document.getElementById("headlessui-radiogroup-option-:Rdcj6:");
-            var element2 = document.getElementById("headlessui-radiogroup-option-:Rlcj6:");
-
-            element1.classList.toggle("whiteSwap");
-            element1.classList.toggle("darkBlueSwap");
-
-            element2.classList.toggle("whiteSwap");
-            element2.classList.toggle("darkBlueSwap");
-        }
-
-    </script>
+    
 </body>
+
 
 </html>

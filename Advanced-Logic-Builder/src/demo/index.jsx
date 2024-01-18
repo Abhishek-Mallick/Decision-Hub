@@ -19,11 +19,6 @@ const emptyInitValue = {"id": uuid(), "type": "group"};
 const initValue = loadedInitValue && Object.keys(loadedInitValue).length > 0 ? loadedInitValue : emptyInitValue;
 const initTree = checkTree(loadTree(initValue), loadedConfig);
 
-// -OR- alternativaly get init value in JsonLogic format:
-//const initLogic = loadedInitLogic && Object.keys(loadedInitLogic).length > 0 ? loadedInitLogic : undefined;
-//const initTree = checkTree(loadFromJsonLogic(initLogic, loadedConfig), loadedConfig);
-
-
 export default class DemoQueryBuilder extends Component {
     
   state = {
@@ -91,19 +86,6 @@ export default class DemoQueryBuilder extends Component {
     return (
       <div>
         <br />
-        <div>
-          stringFormat: 
-          <pre style={preStyle}>
-            {stringify(queryString(immutableTree, config), undefined, 2)}
-          </pre>
-        </div>
-        <hr/>
-        {/* <div>
-          humanStringFormat: 
-          <pre style={preStyle}>
-            {stringify(queryString(immutableTree, config, true), undefined, 2)}
-          </pre>
-        </div> */}
         <hr/>
         <div>
           sqlFormat:
@@ -112,44 +94,44 @@ export default class DemoQueryBuilder extends Component {
           </pre>
           
           <CopyToClipboard text={sqlValue} onCopy={() => this.setState({ copied: true })}>
-            <button>Copy SQL to Clipboard</button>
+            <button>Copy SQL query</button>
           </CopyToClipboard>
 
           {this.state.copied && <span style={{ color: 'red', marginLeft: '10px' }}>Copied.</span>}
         </div>
         <hr/>
         <div>
-          mongodbFormat: 
-          <pre style={preStyle}>
-            {stringify(mongodbFormat(immutableTree, config), undefined, 2)}
-          </pre>
-        </div>
-        <hr/>
-        <div>
-         jsonLogicFormat:
-          { errors.length > 0 
-              && <pre style={preErrorStyle}>
-                {stringify(errors, undefined, 2)}
-              </pre> 
-          }
-          { !!logic
-              && <pre style={preStyle}>
-                {"// Rule"}:<br />
-                {stringify(logic, undefined, 2)}
-                <br />
-                <hr />
-                {"// Data"}:<br />
-                {stringify(data, undefined, 2)}
-              </pre>
-          }
-        </div>
-        <hr/>
-        <div>
-          Tree: 
-          <pre style={preStyle}>
-            {stringify(getTree(immutableTree), undefined, 2)}
-          </pre>
-        </div>
+  jsonLogicFormat:
+  {errors.length > 0 &&
+    <pre style={preErrorStyle}>
+      {stringify(errors, undefined, 2)}
+    </pre>
+  }
+  {!!logic &&
+    <pre style={preStyle}>
+      {"// Rule"}:<br />
+      {stringify(logic, undefined, 2)}
+      <br />
+      <hr />
+      {"// Data"}:<br />
+      {stringify(data, undefined, 2)}
+    </pre>
+  }
+
+  <CopyToClipboard text={JSON.stringify(logic, undefined, 2)} onCopy={() => this.setState({ copiedRule: true })}>
+    <button style={{ marginRight: '10px' }}>Copy Rule</button>
+  </CopyToClipboard>
+
+  {this.state.copiedRule && <span style={{ color: 'red', marginLeft: '10px' }}>Copied Rule.</span>}
+
+  <CopyToClipboard text={JSON.stringify(data, undefined, 2)} onCopy={() => this.setState({ copiedData: true })}>
+    <button style={{ marginRight: '10px' }}>Copy Data</button>
+  </CopyToClipboard>
+
+  {this.state.copiedData && <span style={{ color: 'red', marginLeft: '10px' }}>Copied Data.</span>}
+</div>
+
+
       </div>
     );
   };

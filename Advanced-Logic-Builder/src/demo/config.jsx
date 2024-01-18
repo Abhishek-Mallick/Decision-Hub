@@ -49,18 +49,16 @@ const fields = {
   acc_balance: {
     label: "Account Balance",
     type: "number",
-    preferWidgets: ["slider", "rangeslider"],
     valueSources: ["value", "field"],
     fieldSettings: {
       min: 0,
-      max: 10000,
+      max: 1000000,
       step: 1,
       marks: {
         0: <strong>0%</strong>,
         100: <strong>100%</strong>
       },
     },
-    //overrides
     widgets: {
       acc_balance: {
         widgetProps: {
@@ -220,7 +218,7 @@ const localeSettings = {
   fieldPlaceholder: "Select field",
   operatorPlaceholder: "Select operator",
   deleteLabel: null,
-  addGroupLabel: "Add group",
+  addGroupLabel: "Add nesting",
   addRuleLabel: "Add rule",
   addSubRuleLabel: "Add sub rule",
   delGroupLabel: null,

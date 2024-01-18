@@ -2,12 +2,11 @@ import React from "react";
 import { render } from "react-dom";
 import Demo from "./demo";
 
-// import "@react-awesome-query-builder/ui/css/styles.scss";
 import styles from "./cs/styles.scss";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{ padding: '20px' }}>
       <Demo />
     </div>
   );

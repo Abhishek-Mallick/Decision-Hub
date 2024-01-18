@@ -1,0 +1,58 @@
+@import './variables.scss';
+@import './utils.scss';
+@import './components/index.scss';
+@import './theme/index.scss';
+
+h1 {
+    color: blue;
+}
+
+.main-container {
+    font-family: $title-font-family;
+    margin: {
+        right: 30px;
+    }
+    padding: {
+        top: 10px;
+        bottom: 30px;
+    };
+    position: relative;
+    overflow-x: hidden;
+
+    &.closed {
+        left: 100px;
+        width: calc(100% - 140px);
+    }
+
+    &.open {
+        left: $sideNavWidth - 140px;
+        width: calc(100% - 360px);
+    }   
+}
+
+label {
+    color: $form-label-color;
+    font-size: 18px;
+    margin-right: 20px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+body {
+    margin: 0px;
+}
+
+hr {
+    margin: 20px 0px 10px;
+    border: 1px dashed #aaa;
+}
+
+a {
+    text-decoration: none;
+}

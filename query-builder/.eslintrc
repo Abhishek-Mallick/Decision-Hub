@@ -1,0 +1,37 @@
+{
+  "plugins": [
+    "react"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true
+  },
+  "globals": {
+    "process": true,
+    "webpack": true,
+    "module": true,
+    "__dirname": true
+  },
+  "parser": "@babel/eslint-parser",
+  "settings": {
+    "react": {
+      "createClass": "createReactClass",
+      "pragma": "React",
+      "version": "detect",
+      "flowVersion": "0.53"
+    },
+    "propWrapperFunctions": [
+      "forbidExtraProps",
+      {"property": "freeze", "object": "Object"},
+      {"property": "myFavoriteWrapper"}
+    ]
+  },
+  "rules": {
+    "no-console": ["error", { "allow": ["warn", "error"] }]
+  }
+}

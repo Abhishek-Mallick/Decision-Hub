@@ -130,7 +130,13 @@ export default class DemoQueryBuilder extends Component {
 
   {this.state.copiedData && <span style={{ color: 'red', marginLeft: '10px' }}>Copied Data.</span>}
 </div>
-
+<hr />
+<div>
+          Tree: 
+          <pre style={preStyle}>
+            {stringify(getTree(immutableTree), undefined, 2)}
+          </pre>
+        </div>
 
       </div>
     );

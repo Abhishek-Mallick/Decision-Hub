@@ -1,0 +1,150 @@
+@use "sass:map";
+
+
+
+.attributes-header {
+    color: $form-label-color;
+    display: flex;
+    flex-wrap: wrap;
+    font-family: $tab-font-family;
+    justify-content: flex-end;
+    margin: 0;
+    width: 100%;
+
+    &.dark {
+        color: $link-clr-drk;
+
+        .plus-icon {
+            background: url('../../assets/icons/plus-rounded-dark.svg') no-repeat;
+            background-size: contain;
+        }
+    }
+
+    &.md-blue {
+        color: $link-clr-drk;
+
+        .plus-icon {
+            background: url('../../assets/icons/plus-rounded-dark.svg') no-repeat;
+            background-size: contain;
+        }
+    }
+
+    &.light {
+        color: $form-label-color;
+
+        .plus-icon {
+            background: url('../../assets/icons/plus-icon-rounded.svg') no-repeat;
+            background-size: contain;
+        }
+    }
+
+    .attr-link {
+        cursor: pointer;
+        margin: {
+            left: 25px;
+            right: 25px;
+            top: 10px;
+        }
+
+        .text {
+            margin-left: 30px;
+        }
+    }
+
+    .attr-link:hover {
+        text-decoration: underline;
+    }
+
+    .plus-icon {
+        background: url('../../assets/icons/plus-icon-rounded.svg') no-repeat;
+        background-size: contain;
+        margin: 0 0px 0 0;
+        padding: 0;
+        padding-bottom: 35px;
+        position: absolute;
+        width: 35px;
+        display: none;
+    }
+
+    .submit-icon {
+        background: url('../../assets/icons/submit-icon-green-rounded.svg') no-repeat;
+        background-size: contain;
+        margin: 0 0px 0 0;
+        padding: 0;
+        padding-bottom: 25px;
+        position: absolute;
+        width: 25px;
+    }
+
+    .reset-icon {
+        background: url('../../assets/icons/reset-icon-red-rounded.svg') no-repeat;
+        background-size: contain;
+        margin: 0 0px 0 0;
+        padding: 0;
+        padding-bottom: 25px;
+        position: absolute;
+        width: 25px;
+        display: none;
+    }
+
+    .btn-container {
+        margin-top: 0px;
+    }
+}
+
+td.attributes-header {
+    justify-content: flex-start;
+}
+
+@mixin attr-linktype($color) {
+    background-color: $color;
+    border-radius: 5px;
+    color: $btn-color;
+    padding: 2px 5px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.string {
+    @include attr-linktype(map-get($attribute-type, "string"));
+}
+
+.boolean {
+    @include attr-linktype(map-get($attribute-type, "boolean"));
+}
+
+.array {
+    @include attr-linktype(map-get($attribute-type, "array"));
+    
+}
+
+.object {
+    @include attr-linktype(map-get($attribute-type, "object"));
+}
+
+.number {
+    @include attr-linktype(map-get($attribute-type, "number"));
+}
+
+.view-attribute {
+    border-bottom: 2px solid #ddd;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.md-blue {
+    .view-attribute {
+        color: $form-label-color-drk;
+    }
+}
+
+.dark {
+    color: $form-label-color-drk;
+}
+
+.view-params-container {
+    width: 40%;
+    color: $dark-color;
+}

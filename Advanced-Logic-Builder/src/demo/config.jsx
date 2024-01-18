@@ -225,11 +225,11 @@ const localeSettings = {
   notLabel: "Not",
   fieldSourcesPopupTitle: "Select source",
   valueSourcesPopupTitle: "Select value source",
-  removeRuleConfirmOptions: {
-    title: "Are you sure delete this rule?",
-    okText: "Yes",
-    okType: "danger",
-  },
+  // removeRuleConfirmOptions: {
+  //   title: "Are you sure delete this rule?",
+  //   okText: "Yes",
+  //   okType: "danger",
+  // },
   removeGroupConfirmOptions: {
     title: "Are you sure delete this group?",
     okText: "Yes",
@@ -255,7 +255,7 @@ const settings = {
   // showNot: false,
   // showLabels: true,
   maxNesting: 3,
-  canLeaveEmptyGroup: true, //after deletion
+  canLeaveEmptyGroup: false, //after deletion
 
 };
 

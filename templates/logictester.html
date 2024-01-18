@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DecisionHub</title>
+    <link rel="shortcut icon" type="image/png" href="../static/images/database-solid.svg" />
+    <link rel="stylesheet" href="../static/css/styles.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        #rule, #data, #output{
+			height:300px;
+			margin:0 0 10px;
+		}
+    </style>
+</head>
+
+<body>
+    <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+        data-sidebar-position="fixed" data-header-position="fixed">
+        <!-- Sidebar Start -->
+        <aside class="left-sidebar" style="background-color:#00684a; border: none; box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.7);">
+            <!-- Sidebar scroll-->
+            <div>
+                <div class="brand-logo d-flex align-items-center justify-content-between">
+                    <a href="{{url_for('dashboard')}}" class="text-nowrap logo-img">
+                        <img src="../static/images/dhub_alt.png" width="180" alt="" />
+                    </a>
+                    <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
+                        <i class="ti ti-x fs-8"></i>
+                    </div>
+                </div>
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav " style="padding-left: 20px;" data-simplebar="">
+                    <ul id="sidebarnav">
+                        <li class="nav-small-cap">
+                            <i class="ti ti-dots nav-small-cap-icon fs-4" style="color: white;"></i>
+                            <span class="hide-menu" style="color: white;">Home</span>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="{{url_for('dashboard')}}" aria-expanded="false">
+                                <span>
+                                    <i class="fa-solid fa-desktop" style="color: white;"></i>
+                                </span>
+                                <span class="hide-menu" style="color: white;">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-small-cap">
+                            <i class="ti ti-dots nav-small-cap-icon fs-4" style="color: white;"></i>
+                            <span class="hide-menu" style="color: white;">services | tools</span>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="{{url_for('texttoquery')}}" aria-expanded="false">
+                                <span>
+                                <i class="fa-solid fa-laptop-code" style="color: white;"></i>
+                                </span>
+                                <span class="hide-menu" style="color: white;">Text to Query</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="{{url_for('texttoexcel')}}" aria-expanded="false">
+                                <span>
+                                    <i class="fa-solid fa-file-excel" style="color: white;"></i>
+                                </span>
+                                <span class="hide-menu" style="color: white;">Text to Excel</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="{{url_for('querybuilder')}}" aria-expanded="false">
+                                <span>
+                                    <i class="fa-solid fa-database" style="color: white;"></i>
+                                </span>
+                                <span class="hide-menu" style="color: white;">Logic Builder</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="{{url_for('jsonbuilder')}}" aria-expanded="false">
+                                <span>
+                                    <img src="../static/images/file-json.svg" alt="" style="margin-left: -5px;">
+                                </span>
+                                <span class="hide-menu" style="color: white;margin-left: -5px;">JSON Builder</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="{{url_for('logictester')}}" aria-expanded="false">
+                                <span>
+                                    <i class="fa-regular fa-circle-check" style="color: white;"></i>
+                                </span>
+                                <span class="hide-menu"style="color: white;">Logic Tester</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-small-cap">
+                            <i class="ti ti-dots nav-small-cap-icon fs-4" style="color: white;"></i>
+                            <span class="hide-menu" style="color: white;">Authentications</span>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="{{url_for('register')}}" aria-expanded="false">
+                                <span>
+                                    <i class="fa-solid fa-repeat" style="color: white;"></i>
+                                </span>
+                                <span class="hide-menu" style="color: white;">Switch Profile</span>
+                            </a>
+                        </li>
+
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="{{url_for('logout')}}" aria-expanded="false">
+                                <span>
+                                    <i class="fa-solid fa-right-to-bracket" style="color: white;"></i>
+                                </span>
+                                <span class="hide-menu" style="color: white;">Logout</span>
+                            </a>
+                        </li>
+
+
+                    </ul>
+                    <div class="unlimited-access hide-menu bg-light-primary position-relative mb-7 mt-5 rounded" hidden>
+
+                    </div>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!--  Sidebar End -->
+        <!--  Main wrapper -->
+        <div class="body-wrapper">
+            <!--  Header Start -->
+            <header class="app-header" style="border-bottom: 1px solid;">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <ul class="navbar-nav">
+                        <li class="nav-item d-block d-xl-none">
+                            <a class="nav-link sidebartoggler nav-icon-hover" id="headerCollapse"
+                                href="javascript:void(0)">
+                                <i class="fa-solid fa-bars"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-icon-hover" href="javascript:void(0)">
+                                <i class="fa-solid fa-bell"></i>
+                                <div class="notification bg-primary rounded-circle"></div>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
+                        <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="https://www.pngitem.com/pimgs/m/78-786293_1240-x-1240-0-avatar-profile-icon-png.png"
+                                        alt="" width="35" height="35" class="rounded-circle">
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up"
+                                    aria-labelledby="drop2">
+                                    <div class="message-body">
+                                        <a href="javascript:void(0)"
+                                            class="d-flex align-items-center gap-2 dropdown-item">
+                                            <i class="ti ti-user fs-6"></i>
+                                            <p class="mb-0 fs-3">{{username}}</p>
+                                        </a>
+                                        <a href="javascript:void(0)"
+                                            class="d-flex align-items-center gap-2 dropdown-item">
+                                            <i class="ti ti-mail fs-6"></i>
+                                            <p class="mb-0 fs-3">My Account</p>
+                                        </a>
+                                       
+                                        <a href="{{url_for('logout')}}"
+                                            class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+            <!--  Header End -->
+            <div class="container-fluid">
+                <h1 class="card-title fw-semibold mb-4"
+                    style="text-align: center; font-size: 5rem; margin-bottom: 5rem; color: #00684a;">Logic Tester
+                </h1>
+                <div class="card" >
+                    <div class="container" style="margin-bottom: 20px;">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label for="rule">Rule:</label>
+                                    <textarea required class="form-control" id="rule" rows="15"></textarea>
+                                    <div class="btn btn-default" id="lint-rule">Lint</div>
+                                    <div class="alert" id="message-rule" style="display:none;"></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label for="rule">Data:</label>
+                                    <textarea class="form-control" id="data" rows="15"></textarea>
+                                    <div class="btn btn-default" id="lint-data">Lint</div>
+                                    <div class="alert" id="message-data" style="display:none;"></div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label for="rule">Output:</label>
+                                    <pre id="output"  class="form-control"></pre>
+                                    <div class="btn btn-primary" id="compute">Compute</div>
+                                    <div class="alert alert-danger" id="message-compute" style="display:none;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script src="../static/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../static/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../static/js/sidebarmenu.js"></script>
+    <script src="../static/js/app.min.js"></script>
+    <script src="../static/libs/simplebar/dist/simplebar.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+        <script src="../static/js/logic.js"></script>
+        <script>
+            function lint(element) {
+                var $element = $(element),
+                    text = $element.val(),
+                    output,
+                    $message = $("#message-" + $element.attr("id"));
+
+                if (text === "") {
+                    if ($element.attr("required")) {
+                        $message.removeClass("alert-success").addClass("alert-danger")
+                            .text("Can't be blank").fadeIn();
+                        return false;
+                    } else {
+                        $message.removeClass("alert-danger").addClass("alert-success").text("OK (null)").fadeIn();
+                        return true;
+                    }
+                }
+
+                try {
+                    output = JSON.parse(text);
+                    $message.removeClass("alert-danger").addClass("alert-success").text("No errors detected").fadeIn();
+                    return true;
+                } catch (e) {
+                    $message.removeClass("alert-success").addClass("alert-danger").text(e.message).fadeIn();
+                    return false;
+                }
+
+            }
+
+            $("#compute").click(function () {
+                if (lint("#rule") && lint("#data")) {
+                    var rule = JSON.parse($("#rule").val()),
+                        data = $("#data").val() === "" ? null : JSON.parse($("#data").val()),
+                        output;
+                    try {
+                        output = jsonLogic.apply(rule, data);
+                        console.log(output);
+                        $("#message-compute").fadeOut();
+                        $("#output").text(JSON.stringify(output, null, 4));
+                    } catch (e) {
+                        $("#output").text("");
+                        $("#message-compute").text(e.message).fadeIn();
+                    }
+                }
+            });
+
+            $("#lint-rule").click(function () { lint("#rule"); });
+            $("#lint-data").click(function () { lint("#data"); });
+
+        </script>
+</body>
+
+</html>

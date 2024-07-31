@@ -3,7 +3,7 @@
 
 <hr>
 
-<img align="right" height="300px" padding="20px" src="https://decisionhub.pythonanywhere.com/static/images/server-animate.svg">
+<img align="right" height="300px" padding="20px" src="static/images/server-animate.svg">
 
 # Problem Statement
 
@@ -56,35 +56,34 @@ DecisionHub enables business analysts to instantly prototyping and execute sophi
 
 
 ## Architectural Diagram
-![Decision-Hub drawio (3)](https://github.com/Abhishek-Mallick/Decision-Hub/assets/106394426/1d760f38-0111-4c47-889c-3f63a892fba2)
+![Decision-Hub](https://github.com/Abhishek-Mallick/Decision-Hub/assets/106394426/1d760f38-0111-4c47-889c-3f63a892fba2)
 
-
-## Wireframe
-![archi](https://github.com/Abhishek-Mallick/Decision-Hub/assets/90705452/9ec2a192-a7c4-4305-899f-bc3e82ebaa26)
+## Webapp Preview
+<img src="static/images/preview/img1.png">
+<img src="static/images/preview/img2.png">
+<img src="static/images/preview/img3.png">
+<img src="static/images/preview/img4.png">
+<img src="static/images/preview/img5.png">
+<img src="static/images/preview/img7.png">
+<img src="static/images/preview/img8.png">
 
 
 ## Contribution
 
-To contribute to this project, follow these steps:
-
-1. Clone the repository:
 ```
 git clone https://github.com/Abhishek-Mallick/Decision-Hub
 ```
-
-2. Navigate to the project directory:
 ```
 cd Decision-Hub
 ```
-3. Install the required dependencies:
 ```
 pip install -r requirements.txt
 ```
-4. Run the Flask application:
 ```
 flask run
 ```
-Now you can start contributing to the project by making changes to the codebase. Once you've made your changes, you can create a pull request to have your contributions reviewed and merged into the main codebase.
+
+
 
 ## Documentation
 
